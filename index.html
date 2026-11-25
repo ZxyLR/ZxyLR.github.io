@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f6f7f9"><title>Chroma · 渐变映射工作台</title>
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MiA0MiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZTljM2ZjIi8+PHN0b3Agb2Zmc2V0PSIuNTMiIHN0b3AtY29sb3I9IiNhOTg3ZWYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2MTQ3YzMiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMiAxOCAxNiA2aDI0TDI2IDE4WiIgZmlsbD0iI2QwYjdmNCIvPjxwYXRoIGQ9Ik0yIDI3IDE2IDE1aDI0TDI2IDI3WiIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0yIDM2IDE2IDI0aDI0TDI2IDM2WiIgZmlsbD0iIzZmNTBjNyIvPjwvc3ZnPgo="><style>:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;color:#282831;background:#f6f6f9;--violet:#7852c9;--line:#e5e4eb;--muted:#82818f;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;flex-direction:column}button,select,input{font:inherit}button{border:0;background:none;color:inherit;cursor:pointer}button:disabled{opacity:.32;cursor:default}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #b39adf;outline-offset:3px}button:hover:not(:disabled){background-color:#f2eff8}button,select{transition:background .15s,color .15s}svg.ico{width:17px;height:17px;display:block;flex:none;stroke:currentColor;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65}.topbar{height:80px;background:white;border-bottom:1px solid var(--line);padding:0 clamp(20px,2.5vw,48px);display:flex;align-items:center;justify-content:space-between}.brand,.actions,.title,.canvas-actions,.canvas-foot,.zoom,.file-info,.text-btn,.layer-tools,.layer-tools>div,.sub-head,.foot-meta,.pager,.btn,.dialog-head{display:flex;align-items:center}.brand{gap:10px}.brand img{width:37px;height:37px}.brand b{font-family:Inter,Arial,sans-serif;font-size:28px;letter-spacing:-1.45px;font-weight:720}.brand i,.sep,.canvas-actions em{height:18px;width:1px;background:#dfdfe6}.brand i{margin:0 7px;height:20px}.brand span{font-size:14px;color:#656473;letter-spacing:1px}.actions{gap:10px}.btn{gap:9px;justify-content:center;border:1px solid #dcdbe3;border-radius:8px;padding:10px 17px;font-size:13px;font-weight:580;background:white;box-shadow:0 1px 2px #20203207}.btn.primary{accent-color:var(--violet);background:var(--violet);color:white;border-color:#724dc1}.btn.primary:hover{background:#6841b9}.studio{display:grid;grid-template-columns:minmax(0,1fr) clamp(280px,23vw,360px);align-items:start;gap:20px;width:100%;max-width:1920px;margin:0 auto;padding:24px clamp(20px,2.5vw,48px) 22px}.left,.right{min-width:0;display:flex;flex-direction:column;gap:18px}.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:white;box-shadow:0 2px 5px #26203704}.panel-head{height:56px;padding:0 19px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:10px}.title{gap:10px;white-space:nowrap}.title>.ico{width:19px;height:19px;color:#53525e}.title h1,.title h2,.dialog-head h2{font-size:16px;letter-spacing:.1px;font-weight:660;margin:0}.live{display:flex;align-items:center;gap:5px;font-size:10px;letter-spacing:.45px;color:#41876a;background:#edf7f1;padding:2px 7px;border-radius:5px}.live b,.status-dot{width:6px;height:6px;border-radius:100%;background:#60a783}.canvas-actions{gap:12px}.canvas-actions em{height:14px}.text-btn{color:#73717d;gap:6px;font-size:12px;padding:4px;border-radius:5px}.text-btn[aria-pressed=true]{color:var(--violet);background:#f3effa}.icon{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:5px;color:#70707d}.icon .ico{width:16px;height:16px}.bordered,.pager .icon{border:1px solid var(--line);background:white}.canvas-stage{height:clamp(320px,53.1vh,640px);background-color:#f3f3f7;background-image:radial-gradient(#d3d2dd .8px,transparent .8px);background-size:10px 10px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(20px,2.1vw,38px)}#picture{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 3px 12px #22203622;transform:scale(var(--zoom,1));transform-origin:center;transition:transform .15s}.canvas-foot{height:45px;border-top:1px solid var(--line);padding:0 16px;justify-content:space-between;gap:8px}.file-info{gap:9px;color:#62616e;font-size:12px;min-width:0}.file-info>.ico{width:15px}.file-info span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.file-info .sep{height:12px}.file-info small,.foot-meta{font:11px "SFMono-Regular",Consolas,monospace;color:#878593;white-space:nowrap}.zoom{gap:3px}.zoom button#zoomValue{font:11px Consolas,monospace;width:45px;padding:5px}.count{font:11px/19px Consolas,monospace;background:#f1f0f4;min-width:23px;text-align:center;border-radius:5px;color:#787682}.presets .panel-head{border:0;height:53px}.pager{gap:6px}.pager .icon{height:24px;width:25px}.preset-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;padding:0 18px 17px}.preset{min-width:0;padding:0;text-align:left;background:none!important}.preset-swatch{height:clamp(56px,7.6vh,84px);display:block;border-radius:7px;position:relative;border:1px solid #00000009}.preset.selected .preset-swatch{box-shadow:0 0 0 2px white,0 0 0 4px #906bd8}.preset.selected .preset-name{color:#7953c1;font-weight:640}.preset-name{display:block;font-size:12px;margin:9px 0 0 2px}.check{position:absolute;top:6px;right:6px;width:16px;height:16px;background:#fff;color:#7952c0;border-radius:50%;display:grid;place-items:center}.check .ico{width:11px;height:11px;stroke-width:3}.layer-list{padding:12px 10px 7px;max-height:292px;overflow:auto}.layer{display:flex;align-items:center;gap:10px;padding:8px 9px;border-radius:7px;cursor:pointer;border:1px solid transparent;min-height:61px}.layer:hover{background:#f7f6fa}.layer.selected{background:#f2eefb;border-color:#e0d5f4}.layer.off .thumb,.layer.off .layer-name{opacity:.45}.thumb{width:43px;height:39px;border-radius:5px;flex-shrink:0;background-position:center;background-size:cover;box-shadow:inset 0 0 0 1px #0000000a}.layer-text{min-width:0;flex:1}.layer-name{font-size:13px;font-weight:620}.layer-desc{font-size:11px;color:#84818f;margin-top:3px}.layer .icon{width:23px}.layer-tools{justify-content:space-between;border-top:1px solid var(--line);padding:6px 13px}.layer-tools>div{gap:2px}.prop-body{padding:17px 19px 20px}.sub-head{justify-content:space-between}.prop-body strong,.prop-body label,dialog label{font-weight:550;font-size:12px}.sub-head .text-btn{font-size:11px}.sub-head .text-btn .ico{width:13px;height:13px}.ramp{height:30px;border-radius:5px;margin:13px 5px 0;position:relative}.stop{position:absolute;bottom:-5px;transform:translateX(-50%);width:12px;height:15px;border-radius:5px;background:var(--c);border:2px solid white;box-shadow:0 0 0 1px #b9b6c2;overflow:hidden;cursor:pointer}.stop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.ramp-label{display:flex;justify-content:space-between;font-size:10px;color:#8a8794;margin-top:11px}.settings-group{margin-top:19px}.settings-group label{display:block}.select-wrap{position:relative;margin-top:8px}.select-wrap>.ico{position:absolute;right:10px;top:11px;width:14px;height:14px;pointer-events:none}select{width:100%;appearance:none;border:1px solid #dedde6;border-radius:6px;color:#46454f;background:white;padding:8px 11px;font-size:12px;cursor:pointer}output{background:#f8f8fa;border:1px solid #e7e6eb;border-radius:5px;padding:3px 7px;font:11px Consolas,monospace;color:#605e6b}input[type=range]{appearance:none;width:100%;height:4px;background:linear-gradient(to right,#8963d0 var(--amount),#e7e4ed var(--amount));border-radius:4px;margin:15px 0 3px;cursor:pointer}input[type=range]::-webkit-slider-thumb{appearance:none;width:13px;height:13px;border-radius:50%;background:white;border:3px solid #8059c8;box-shadow:0 1px 3px #23182d33}input[type=range]::-moz-range-thumb{width:9px;height:9px;border:3px solid #8059c8;border-radius:50%;background:white}#baseNote{font-size:13px;color:var(--muted);padding:25px}footer{display:flex;justify-content:space-between;align-items:center;min-height:39px;border-top:1px solid var(--line);padding:0 clamp(20px,2.5vw,48px);margin-top:auto;font-size:11px;color:#85838d}footer>span{display:flex;align-items:center;gap:8px}.foot-meta{font-family:inherit;gap:8px}.foot-meta .ico{width:13px}.foot-meta b{font-weight:500}.drop-overlay{display:none;position:absolute;inset:0;background:#efe6f6ed;color:#6e4aa9;border:2px dashed #9265d2;place-items:center}.dragging .drop-overlay{display:grid}.preview:fullscreen{border:0;border-radius:0;display:flex;flex-direction:column}.preview:fullscreen .canvas-stage{flex:1;height:0}.preview:fullscreen .canvas-foot,.preview:fullscreen .panel-head{flex-shrink:0}dialog{border:1px solid var(--line);padding:24px;border-radius:14px;width:min(350px,90vw);box-shadow:0 18px 90px #29233526}dialog::backdrop{background:#29253255;backdrop-filter:blur(3px)}.dialog-head{justify-content:space-between;margin-bottom:18px}dialog select{margin:8px 0}dialog p{font-size:12px;color:#75717d}dialog .btn{width:100%;margin-top:20px}
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MiA0MiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZTljM2ZjIi8+PHN0b3Agb2Zmc2V0PSIuNTMiIHN0b3AtY29sb3I9IiNhOTg3ZWYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2MTQ3YzMiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMiAxOCAxNiA2aDI0TDI2IDE4WiIgZmlsbD0iI2QwYjdmNCIvPjxwYXRoIGQ9Ik0yIDI3IDE2IDE1aDI0TDI2IDI3WiIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0yIDM2IDE2IDI0aDI0TDI2IDM2WiIgZmlsbD0iIzZmNTBjNyIvPjwvc3ZnPgo="><style>:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;color:#282831;background:#f6f6f9;--violet:#7852c9;--line:#e5e4eb;--muted:#82818f;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;flex-direction:column}button,select,input{font:inherit}button{border:0;background:none;color:inherit;cursor:pointer}button:disabled{opacity:.32;cursor:default}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #b39adf;outline-offset:3px}button:hover:not(:disabled){background-color:#f2eff8}button,select{transition:background .15s,color .15s}svg.ico{width:17px;height:17px;display:block;flex:none;stroke:currentColor;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65}.topbar{height:80px;background:white;border-bottom:1px solid var(--line);padding:0 clamp(20px,2.5vw,48px);display:flex;align-items:center;justify-content:space-between}.brand,.actions,.title,.canvas-actions,.canvas-foot,.zoom,.file-info,.text-btn,.layer-tools,.layer-tools>div,.sub-head,.foot-meta,.pager,.btn,.dialog-head{display:flex;align-items:center}.brand{gap:10px}.brand img{width:37px;height:37px}.brand b{font-family:Inter,Arial,sans-serif;font-size:28px;letter-spacing:-1.45px;font-weight:720}.brand i,.sep,.canvas-actions em{height:18px;width:1px;background:#dfdfe6}.brand i{margin:0 7px;height:20px}.brand span{font-size:14px;color:#656473;letter-spacing:1px}.actions{gap:10px}.btn{gap:9px;justify-content:center;border:1px solid #dcdbe3;border-radius:8px;padding:10px 17px;font-size:13px;font-weight:580;background:white;box-shadow:0 1px 2px #20203207}.btn.primary{accent-color:var(--violet);background:var(--violet);color:white;border-color:#724dc1}.btn.primary:hover{background:#6841b9}.studio{display:grid;grid-template-columns:minmax(0,1fr) clamp(280px,23vw,360px);align-items:start;gap:20px;width:100%;max-width:1920px;margin:0 auto;padding:24px clamp(20px,2.5vw,48px) 22px}.left,.right{min-width:0;display:flex;flex-direction:column;gap:18px}.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:white;box-shadow:0 2px 5px #26203704}.panel-head{height:56px;padding:0 19px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:10px}.title{gap:10px;white-space:nowrap}.title>.ico{width:19px;height:19px;color:#53525e}.title h1,.title h2,.dialog-head h2{font-size:16px;letter-spacing:.1px;font-weight:660;margin:0}.live{display:flex;align-items:center;gap:5px;font-size:10px;letter-spacing:.45px;color:#41876a;background:#edf7f1;padding:2px 7px;border-radius:5px}.live b,.status-dot{width:6px;height:6px;border-radius:100%;background:#60a783}.canvas-actions{gap:12px}.canvas-actions em{height:14px}.text-btn{color:#73717d;gap:6px;font-size:12px;padding:4px;border-radius:5px}.text-btn[aria-pressed=true]{color:var(--violet);background:#f3effa}.icon{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:5px;color:#70707d}.icon .ico{width:16px;height:16px}.bordered,.pager .icon{border:1px solid var(--line);background:white}.canvas-stage{height:clamp(320px,53.1vh,640px);background-color:#f3f3f7;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:clamp(20px,2.1vw,38px)}#picture{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 3px 12px #22203622;transform:scale(var(--zoom,1));transform-origin:center;transition:transform .15s}.canvas-foot{height:45px;border-top:1px solid var(--line);padding:0 16px;justify-content:space-between;gap:8px}.file-info{gap:9px;color:#62616e;font-size:12px;min-width:0}.file-info>.ico{width:15px}.file-info span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.file-info .sep{height:12px}.file-info small,.foot-meta{font:11px "SFMono-Regular",Consolas,monospace;color:#878593;white-space:nowrap}.zoom{gap:3px}.zoom button#zoomValue{font:11px Consolas,monospace;width:45px;padding:5px}.count{font:11px/19px Consolas,monospace;background:#f1f0f4;min-width:23px;text-align:center;border-radius:5px;color:#787682}.presets .panel-head{border:0;height:53px}.pager{gap:6px}.pager .icon{height:24px;width:25px}.preset-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;padding:0 18px 17px}.preset{min-width:0;padding:0;text-align:left;background:none!important}.preset-swatch{height:clamp(56px,7.6vh,84px);display:block;border-radius:7px;position:relative;border:1px solid #00000009}.preset.selected .preset-swatch{box-shadow:0 0 0 2px white,0 0 0 4px #906bd8}.preset.selected .preset-name{color:#7953c1;font-weight:640}.preset-name{display:block;font-size:12px;margin:9px 0 0 2px}.check{position:absolute;top:6px;right:6px;width:16px;height:16px;background:#fff;color:#7952c0;border-radius:50%;display:grid;place-items:center}.check .ico{width:11px;height:11px;stroke-width:3}.layer-list{padding:12px 10px 7px;max-height:292px;overflow:auto}.layer{display:flex;align-items:center;gap:10px;padding:8px 9px;border-radius:7px;cursor:pointer;border:1px solid transparent;min-height:61px}.layer:hover{background:#f7f6fa}.layer.selected{background:#f2eefb;border-color:#e0d5f4}.layer.off .thumb,.layer.off .layer-name{opacity:.45}.thumb{width:43px;height:39px;border-radius:5px;flex-shrink:0;background-position:center;background-size:cover;box-shadow:inset 0 0 0 1px #0000000a}.layer-text{min-width:0;flex:1}.layer-name{font-size:13px;font-weight:620}.layer-desc{font-size:11px;color:#84818f;margin-top:3px}.layer .icon{width:23px}.layer-tools{justify-content:space-between;border-top:1px solid var(--line);padding:6px 13px}.layer-tools>div{gap:2px}.prop-body{padding:17px 19px 20px}.sub-head{justify-content:space-between}.prop-body strong,.prop-body label,dialog label{font-weight:550;font-size:12px}.sub-head .text-btn{font-size:11px}.sub-head .text-btn .ico{width:13px;height:13px}.ramp{height:30px;border-radius:5px;margin:13px 5px 0;position:relative}.stop{position:absolute;bottom:-5px;transform:translateX(-50%);width:12px;height:15px;border-radius:5px;background:var(--c);border:2px solid white;box-shadow:0 0 0 1px #b9b6c2;overflow:hidden;cursor:pointer}.stop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.ramp-label{display:flex;justify-content:space-between;font-size:10px;color:#8a8794;margin-top:11px}.settings-group{margin-top:19px}.settings-group label{display:block}.select-wrap{position:relative;margin-top:8px}.select-wrap>.ico{position:absolute;right:10px;top:11px;width:14px;height:14px;pointer-events:none}select{width:100%;appearance:none;border:1px solid #dedde6;border-radius:6px;color:#46454f;background:white;padding:8px 11px;font-size:12px;cursor:pointer}output{background:#f8f8fa;border:1px solid #e7e6eb;border-radius:5px;padding:3px 7px;font:11px Consolas,monospace;color:#605e6b}input[type=range]{appearance:none;width:100%;height:4px;background:linear-gradient(to right,#8963d0 var(--amount),#e7e4ed var(--amount));border-radius:4px;margin:15px 0 3px;cursor:pointer}input[type=range]::-webkit-slider-thumb{appearance:none;width:13px;height:13px;border-radius:50%;background:white;border:3px solid #8059c8;box-shadow:0 1px 3px #23182d33}input[type=range]::-moz-range-thumb{width:9px;height:9px;border:3px solid #8059c8;border-radius:50%;background:white}#baseNote{font-size:13px;color:var(--muted);padding:25px}footer{display:flex;justify-content:space-between;align-items:center;min-height:39px;border-top:1px solid var(--line);padding:0 clamp(20px,2.5vw,48px);margin-top:auto;font-size:11px;color:#85838d}footer>span{display:flex;align-items:center;gap:8px}.foot-meta{font-family:inherit;gap:8px}.foot-meta .ico{width:13px}.foot-meta b{font-weight:500}.drop-overlay{display:none;position:absolute;inset:0;background:#efe6f6ed;color:#6e4aa9;border:2px dashed #9265d2;place-items:center}.dragging .drop-overlay{display:grid}.preview:fullscreen{border:0;border-radius:0;display:flex;flex-direction:column}.preview:fullscreen .canvas-stage{flex:1;height:0}.preview:fullscreen .canvas-foot,.preview:fullscreen .panel-head{flex-shrink:0}dialog{border:1px solid var(--line);padding:24px;border-radius:14px;width:min(350px,90vw);box-shadow:0 18px 90px #29233526}dialog::backdrop{background:#29253255;backdrop-filter:blur(3px)}.dialog-head{justify-content:space-between;margin-bottom:18px}dialog select{margin:8px 0}dialog p{font-size:12px;color:#75717d}dialog .btn{width:100%;margin-top:20px}
 @media(min-width:1600px){.studio{gap:24px}.left,.right{gap:22px}.canvas-stage{height:56vh}}
 @media(max-width:1050px){.studio{grid-template-columns:minmax(0,1fr) 270px;gap:14px;padding:18px 16px}.preset-row{gap:9px;padding:0 13px 15px}.panel-head{padding:0 14px}.canvas-stage{height:clamp(260px,39vw,450px);padding:18px}.file-info{gap:6px}.canvas-foot{padding:0 10px}.preset-name{font-size:11px}.canvas-actions{gap:5px}}
 @media(max-width:780px){.topbar{height:65px;padding:0 16px}.brand b{font-size:24px}.brand img{width:30px}.brand{gap:6px}.brand i,.brand span{display:none}.actions{gap:6px}.btn{font-size:12px;padding:8px 10px;gap:5px}.studio{display:flex;flex-direction:column;gap:14px;padding:14px 12px}.left,.right{width:100%;gap:14px}.right{display:grid;grid-template-columns:1fr 1fr;align-items:start}.canvas-stage{height:clamp(220px,52vw,400px);padding:16px}.panel-head{height:47px}.preset-row{grid-template-columns:repeat(6,minmax(0,1fr))}.preset-swatch{height:50px}.title h1,.title h2{font-size:14px}.title{gap:7px}.prop-body{padding:12px 15px 18px}}
@@ -12,6 +12,7 @@
 @media(max-width:780px){.workspaces{padding:7px 12px;gap:6px}.canvas-stage{height:clamp(220px,52vw,400px)}.families{padding:0 12px 12px;flex-wrap:nowrap}.board-tabs{max-width:calc(100% - 88px)}}
 #picture{display:block;width:100%;height:100%;max-width:none;max-height:none;box-shadow:none;transform:none;touch-action:none;user-select:none}.canvas-stage{isolation:isolate}.canvas-stage .empty-canvas{z-index:1}.canvas-stage .drop-overlay{z-index:2}.canvas-stage.magnified #picture{cursor:grab}.canvas-stage.panning #picture{cursor:grabbing}.add-actions,.size-pair,.size-pair label span{display:flex;align-items:center}.add-actions{gap:8px}.spectrum-add{font-size:11px;border:1px solid var(--line);padding:5px 7px}.spectrum-dot{height:13px;width:13px;display:inline-block;border-radius:50%;background:conic-gradient(#fa5b64,#f8cc58,#78bf79,#65ced6,#787ce1,#d184c2,#fa5b64)}.spectrum-strip{height:21px;border-radius:4px;margin:8px 0;background:linear-gradient(90deg,red,#ff0,#0f0,#0ff,#00f,#f0f,red)}#angle{margin-top:7px}.size-pair{gap:12px;margin:14px 0 6px}.size-pair label{width:50%;color:#55515e}.size-pair label span{gap:5px;margin-top:5px;font-size:11px;color:var(--muted)}.size-pair input{border:1px solid var(--line);border-radius:6px;min-width:0;width:100%;padding:8px;font-size:14px;color:#393541}.size-tip{font-size:11px}.zoom #zoomValue{min-width:54px}#paper{stroke:#bdb9c7;stroke-width:1;vector-effect:non-scaling-stroke}
 #spectrumEditor>label{display:block;font-size:12px;margin:12px 0 6px}
+ .sprite-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:9px 15px;border-top:1px solid var(--line)}.sprite-tools .btn,.sprite-tools label{font-size:12px}.sprite-tools .btn{padding:6px 10px}.sprite-tools select{width:auto}.sprite-dialog input[type=number]{border:1px solid var(--line);border-radius:6px;padding:7px;width:82px;margin:4px;color:inherit}#playerDialog{width:min(540px,94vw);max-height:94vh;overflow:auto}.movie-window{background:#f5f4f7;display:grid;place-items:center;margin:12px 0;height:clamp(120px,35vh,300px);border-radius:7px}.movie-window canvas{width:100%;height:100%;min-height:0;object-fit:contain;image-rendering:pixelated}.movie-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:5px}.movie-row .btn{width:auto;margin:0}.movie-row label{font-size:12px}#ticks{position:relative;display:flex;gap:3px;overflow-x:auto;padding:5px 0 9px;margin:3px 0 8px}#ticks button{border:1px solid var(--line);min-width:32px;border-radius:4px;font:12px monospace;padding:5px}#ticks button[aria-current]{background:#7955ba;color:white}#scrubber{background:#c8badf}.sprite-dialog output{font-size:12px}#gifStatus:empty{display:none}
 </style>
 </head>
 <body>
@@ -21,15 +22,16 @@
 <section class="left">
 <article class="panel preview" id="preview"><div class="panel-head"><div class="title"><i data-i="canvas"></i><h1>画布预览</h1><span class="live"><b></b>实时</span></div><div class="canvas-actions"><button id="compare" class="text-btn" aria-pressed="false"><i data-i="compare"></i><span>对比原图</span></button><em></em><button id="full" class="icon" title="全屏预览" aria-label="全屏预览"><i data-i="expand"></i></button></div></div>
 <div class="canvas-stage" id="stage"><svg id="picture" role="img" aria-label="像素矢量预览，放大后可拖动画布" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<defs><pattern id="checker" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#fff"/><path d="M0 0h4v4H0z M4 4h4v4H4z" fill="#e9e8ed"/></pattern></defs>
-<rect id="paper" fill="url(#checker)"/><g id="pixelPaths"></g></svg><button id="emptyCanvas" class="empty-canvas" hidden><i data-i="upload"></i><strong>导入第一张图片</strong><span>选择图片或拖入画布</span></button><div class="drop-overlay">松开以导入当前图层</div></div>
-<div class="canvas-foot"><div class="file-info"><i data-i="picture"></i><span id="filename">Alpine Peaks.jpg</span><i class="sep"></i><small id="dimensions">1920 × 1080</small></div><div class="zoom"><button id="minus" class="icon" aria-label="缩小" title="缩小"><i data-i="minus"></i></button><button id="zoomValue" title="适应画布并居中">100%</button><button id="plus" class="icon" aria-label="放大" title="放大"><i data-i="plus"></i></button></div></div></article>
+<rect id="paper" fill="#ffffff"/><g id="pixelPaths"></g></svg><button id="emptyCanvas" class="empty-canvas" hidden><i data-i="upload"></i><strong>导入第一张图片</strong><span>选择图片或拖入画布</span></button><div class="drop-overlay">松开以导入当前图层</div></div>
+<div class="sprite-tools"><button id="makeSheet" class="btn">生成精灵序列</button><button id="animPreview" class="btn">预览模式</button><label hidden>编辑帧 <select id="editFrame"></select></label></div><div class="canvas-foot"><div class="file-info"><i data-i="picture"></i><span id="filename">Alpine Peaks.jpg</span><i class="sep"></i><small id="dimensions">1920 × 1080</small></div><div class="zoom"><button id="minus" class="icon" aria-label="缩小" title="缩小"><i data-i="minus"></i></button><button id="zoomValue" title="适应画布并居中">100%</button><button id="plus" class="icon" aria-label="放大" title="放大"><i data-i="plus"></i></button></div></div></article>
 <article class="panel presets"><div class="panel-head"><div class="title"><i data-i="palette"></i><h2>渐变映射库</h2><span class="count" id="presetCount"></span></div><div class="pager"><button class="icon" id="prev" aria-label="上一组预设"><i data-i="left"></i></button><button class="icon" id="next" aria-label="下一组预设"><i data-i="right"></i></button></div></div><div class="families" id="families" aria-label="选择色系"></div><div class="preset-row" id="presets"></div></article>
 </section>
 <aside class="right">
 <article class="panel layer-panel"><div class="panel-head"><div class="title"><i data-i="layers"></i><h2>图层</h2><span class="count" id="layerCount"></span></div><div class="add-actions"><button class="text-btn spectrum-add" id="addRainbow" title="添加彩虹剪辑蒙版"><span class="spectrum-dot"></span>彩虹蒙版</button><button class="icon bordered" id="add" title="添加渐变映射图层" aria-label="添加渐变映射图层"><i data-i="plus"></i></button></div></div><div id="layerList" class="layer-list"></div><div class="layer-tools"><button class="text-btn" id="duplicate"><i data-i="copy"></i>复制图层</button><div><button class="icon" id="up" aria-label="上移图层" title="上移图层"><i data-i="up"></i></button><button class="icon" id="down" aria-label="下移图层" title="下移图层"><i data-i="down"></i></button><button class="icon" id="remove" aria-label="删除图层" title="删除图层"><i data-i="trash"></i></button></div></div></article>
 <article class="panel properties"><div class="panel-head"><div class="title"><i data-i="sliders"></i><h2>图层属性</h2></div><button class="icon" id="reset" title="重置图层属性" aria-label="重置图层属性"><i data-i="reset"></i></button></div><div id="propBody" class="prop-body"><div class="sub-head"><strong>图层图像</strong><button id="layerImport" class="text-btn"><i data-i="upload"></i><span>导入图片</span></button></div><div id="sourceName" class="source-name"></div><div id="gradientEditor"><div class="sub-head"><label class="map-toggle"><input id="mapping" type="checkbox">渐变映射</label><button class="text-btn" id="reverse"><i data-i="reverse"></i>反转</button></div><div class="ramp" id="ramp"></div><div class="ramp-label"><span>阴影</span><span>高光</span></div></div><div id="spectrumEditor" hidden><strong>RGB 彩虹色谱</strong><div class="spectrum-strip"></div><label for="colorRange">色彩范围</label><select id="colorRange"><option value="hue">连续彩虹色相</option><option value="rgb">完整 RGB 色域 · 24 位</option></select><div class="settings-group"><label for="angle">渐变方向</label><select id="angle"></select></div></div><div class="settings-group"><label for="blend">混合模式</label><div class="select-wrap"><select id="blend"></select><i data-i="down"></i></div></div><div class="settings-group"><div class="sub-head"><label for="opacity">不透明度</label><output id="opacityOut"></output></div><input type="range" id="opacity" min="0" max="100"></div></div><div id="baseNote" hidden>添加图层或导入图片以开始编辑。</div></article>
 </aside></main><footer><span><b class="status-dot"></b><span id="status" role="status">工作台就绪</span></span><span class="foot-meta"><i data-i="monitor"></i>sRGB <b>·</b> 8 bit <b>·</b> 本地处理</span></footer>
+<dialog id="sheetDialog" class="sprite-dialog"><form id="sheetForm"><div class="dialog-head"><h2>生成纵向精灵序列</h2><button type="button" class="icon" id="closeSheet" aria-label="关闭">×</button></div><label>总帧数 <input id="frameCount" type="number" min="1" step="1" value="1" required></label><p id="sheetHint" role="status"></p><button class="btn primary" type="submit">生成序列</button></form></dialog>
+<dialog id="playerDialog" class="sprite-dialog"><div class="dialog-head"><h2>精灵动画预览</h2><button class="icon" id="closePlayer" aria-label="关闭">×</button></div><div class="movie-window"><canvas id="frameWindow" aria-label="当前动画帧"></canvas></div><div class="movie-row"><output id="frameReadout"></output><label>单帧高度（px）<input id="sliceH" type="number" min="1" step="1" required></label></div><input id="scrubber" type="range" min="0" step="1" aria-label="帧进度"><div id="ticks" aria-label="帧刻度"></div><div class="movie-row"><button id="playFrames" class="btn">播放</button><label id="timingLabel" hidden>播放时序 <select id="timingMode"><option value="original">GIF 原始帧时长</option><option value="fixed">固定 FPS</option></select></label><label>FPS <input id="fps" min="1" max="100" type="number" step="1" required value="12"></label><button id="gifSave" class="btn primary">导出 GIF</button></div><p id="gifStatus" role="status"></p></dialog>
 <dialog id="createDialog"><form id="createForm"><div class="dialog-head"><h2>新建工作台</h2><button type="button" id="cancelCreate" class="icon" aria-label="关闭"><i data-i="x"></i></button></div><div class="size-pair"><label for="newW">宽度<span><input id="newW" type="number" min="16" max="4096" step="16" value="32" required> px</span></label><label for="newH">高度<span><input id="newH" type="number" min="16" max="4096" step="16" value="32" required> px</span></label></div><p class="size-tip">每边 16–4096 px，以 16 px 为步长。</p><button type="submit" class="btn primary">创建工作台</button></form></dialog>
 <dialog id="exportDialog"><form id="exportForm"><div class="dialog-head"><h2>导出图片</h2><button class="icon" id="cancelExport" type="button" aria-label="关闭"><i data-i="x"></i></button></div><label for="format">文件格式</label><select id="format"><option value="png">PNG</option><option value="jpeg">JPEG</option><option value="webp">WebP</option></select><div class="size-pair"><label for="outW">宽度<span><input id="outW" type="number" min="16" max="4096" step="16" value="32" required> px</span></label><label for="outH">高度<span><input id="outH" type="number" min="16" max="4096" step="16" value="32" required> px</span></label></div><p class="size-tip">每边 16–4096 px，以 16 px 为步长。</p><p id="exportSize"></p><button type="submit" id="save" class="btn primary"><i data-i="download"></i>下载图片</button></form></dialog>
 <script>"use strict";
@@ -159,9 +161,14 @@ $('cancelCreate').onclick=()=>$('createDialog').close();
 function openNewWorkspace(size,asset=null){
  const next=Object.assign(newBoard(Math.max(...boards.map(b=>b.number))+1),size);
  if(asset){
-  baseOf(next).asset=asset;
+  const base=baseOf(next);
+  base.asset=asset;
+  addImportLayers(next,base);
   next.status=asset.name+' 已导入新工作台';
  }
+ activateWorkspace(next);
+}
+function activateWorkspace(next){
  boards.push(next);board=next;rememberActive();refresh();
  $('boardTabs').lastElementChild?.scrollIntoView?.({block:'nearest',inline:'nearest'});
 }
@@ -243,10 +250,28 @@ $('blend').add(new Option('剪辑蒙版','clip'));
 ['→','↘','↓','↙','←','↖','↑','↗'].forEach((arrow,i)=>$('angle').add(new Option(arrow+'  '+(45*i)+'°',45*i)));
 $('angle').onchange=e=>{active().angle=Number(e.target.value);refresh()};
 $('colorRange').onchange=e=>{active().range=e.target.value;refresh()};
-$('addRainbow').onclick=()=>{
- const layer=makeLayer('彩虹蒙版 '+String(++board.serial).padStart(2,'0'),'暮光紫霞','clip');
+function makeRainbow(workspace){
+ const layer=makeLayer('彩虹蒙版 '+String(++workspace.serial).padStart(2,'0'),'暮光紫霞','clip');
  Object.assign(layer,{kind:'spectrum',angle:0,range:'hue',mapped:false});
  Object.assign(layer.original,{angle:0,range:'hue',mapped:false});
+ return layer;
+}
+function addImportLayers(workspace,imported){
+ const rainbow=makeRainbow(workspace);
+ if(imported.mode==='clip')rainbow.asset=imported.asset;
+ workspace.layers.splice(workspace.layers.indexOf(imported)+1,0,rainbow);
+
+ const base=baseOf(workspace);
+ const source=base?.asset?base:imported;
+ const copy=makeLayer(source.name+' 副本 · 明度','暮光紫霞','luminosity');
+ copy.asset=source.asset;
+ copy.mapped=false;
+ copy.original.mapped=false;
+ workspace.layers.push(copy);
+ workspace.selected=copy.id;
+}
+$('addRainbow').onclick=()=>{
+ const layer=makeRainbow(board);
  board.layers.splice(board.layers.indexOf(active())+1,0,layer);board.selected=layer.id;board.comparing=false;refresh();
 };
 $('add').onclick=()=>{insertAdjustment(active()?.preset||'暮光紫霞');refresh()};
@@ -353,7 +378,7 @@ function paintSpectrum(ctx,layer,w,h){
   ctx.save();ctx.globalCompositeOperation='destination-in';ctx.drawImage(mask,0,0);ctx.restore();
  }
 }
-function compose(canvas,b,original=false){
+function composeFrame(canvas,b,original=false){
  const w=canvas.width,h=canvas.height,ctx=canvas.getContext('2d',{willReadFrequently:true});
  ctx.clearRect(0,0,w,h);
  if(original){const asset=referenceOf(b);if(asset)drawNative(ctx,asset.image,w,h);return}
@@ -455,11 +480,11 @@ function updateView(){
  const ref=referenceOf(board),zoom=board.zoom;
  $('filename').textContent=ref?.name||titleOf(board);$('dimensions').textContent=board.width?board.width+' × '+board.height:'空白画布';
  $('stage').style.setProperty('--zoom',zoom/100);$('zoomValue').textContent=zoom+'%';$('minus').disabled=zoom<=25;$('plus').disabled=zoom>=maxZoom();
- $('emptyCanvas').hidden=!!ref||board.layers.some(l=>l.kind==='spectrum'&&l.mode!=='clip');$('export').disabled=false;$('compare').disabled=!ref;
+ $('emptyCanvas').hidden=!!board.sprite||!!ref||board.layers.some(l=>l.kind==='spectrum'&&l.mode!=='clip');$('export').disabled=false;$('compare').disabled=!ref;
  $('compare').setAttribute('aria-pressed',String(board.comparing));$('compare').querySelector('span').textContent=board.comparing?'返回效果':'对比原图';
  $('status').textContent=board.status;
 }
-function refresh(save=true){drawTabs();renderLayers();renderProperties();renderPresets();updateView();schedule();if(save)saveLater(board)}
+function refresh(save=true){frameControls();drawTabs();renderLayers();renderProperties();renderPresets();updateView();schedule();if(save)saveLater(board)}
 function maxZoom(){return Math.max(6400,Math.max(board.width,board.height)*100)}
 function zoomTo(value){board.zoom=Math.max(25,Math.min(maxZoom(),Math.round(value)));updateView();renderVector();saveLater(board)}
 $('minus').onclick=()=>zoomTo(board.zoom/2);$('plus').onclick=()=>zoomTo(board.zoom*2);
@@ -485,10 +510,17 @@ $('layerImport').onclick=()=>pickImage(targetFor());
 async function importFile(file,target){
  if(!file)return;
  const {board:b,layer,createWorkspace}=target;
+ let gifImport=false;
  // A late decode belongs to the initiating layer, even after switching workspaces.
  const slots=layer?imports:baseSlot,key=layer||b||target,token=Symbol();slots.set(key,token);
  try{
-  const asset=await decodeAsset(await readFile(file),file.name);
+  const url=await readFile(file),start=url.indexOf(',')+1,signature=url.slice(start,start+8);
+  gifImport=signature==='R0lGODdh'||signature==='R0lGODlh';
+  if(gifImport){
+   const bytes=Uint8Array.from(atob(url.slice(start)),c=>c.charCodeAt(0));
+   await openGifWorkspace(bytes,file.name);return;
+  }
+  const asset=await decodeAsset(url,file.name);
   if(createWorkspace){
    openNewWorkspace({width:asset.image.naturalWidth||asset.image.width,height:asset.image.naturalHeight||asset.image.height},asset);
    return;
@@ -497,12 +529,13 @@ async function importFile(file,target){
   let dest=layer;
   if(!dest){dest=makeBase();b.layers.unshift(dest);b.selected=dest.id}
   dest.asset=asset;dest.visible=true;
+  addImportLayers(b,dest);
   b.comparing=false;b.status=asset.name+' 已导入「'+dest.name+'」';
   if(board===b)refresh(false);saveLater(b);
- }catch{
-  const owner=createWorkspace?board:b;
+ }catch(error){
+  const owner=gifImport||createWorkspace?board:b;
   if(slots.get(key)===token&&boards.includes(owner)){
-   owner.status='无法读取图片，请尝试 PNG、JPEG 或 WebP 格式';if(owner===board)updateView();
+   owner.status=gifImport?'GIF 导入失败：'+error.message:'无法读取图片，请检查文件格式';if(owner===board)updateView();
   }
  }
 }
@@ -512,7 +545,10 @@ const stage=$('stage');let dragDepth=0;
 stage.ondragenter=e=>{e.preventDefault();dragDepth++;stage.classList.add('dragging')};stage.ondragover=e=>e.preventDefault();
 stage.ondragleave=()=>{if(--dragDepth<=0)stage.classList.remove('dragging')};stage.ondrop=e=>{e.preventDefault();dragDepth=0;stage.classList.remove('dragging');importFile(e.dataTransfer.files[0],targetFor())};
 $('export').onclick=()=>{
- exportBoard=board;$('outW').value=$('outH').value=32;
+ exportBoard=board;for(const [id,value] of [['outW',board.width],['outH',board.height]]){
+  const field=$(id);field.min=board.sprite?1:16;field.max=board.sprite?Math.max(value,4096):4096;field.step=board.sprite?1:16;field.value=board.sprite?value:32;
+ }
+ $('exportDialog').querySelector('.size-tip').textContent=board.sprite?'默认导出完整纵向序列。':'每边 16–4096 px，以 16 px 为步长。';
  $('exportSize').textContent=titleOf(board)+' · 当前画布 '+board.width+' × '+board.height+' px';
  $('exportDialog').showModal();
 };
@@ -536,17 +572,21 @@ function openStore(){return new Promise((resolve,reject)=>{
 })}
 function serialize(b){
  const assets=[],assetIds=new Map();
- const layers=b.layers.map(l=>{
+ const storeLayer=l=>{
   if(l.asset&&!assetIds.has(l.asset)){assetIds.set(l.asset,assets.length);assets.push({url:l.asset.url===demoURL?'@demo':l.asset.url===pixelDemoURL?'@pixels':l.asset.url,name:l.asset.name})}
   return {...l,asset:l.asset?assetIds.get(l.asset):null};
- });
- return {...b,assets,layers};
+ };
+ const layers=b.layers.map(storeLayer);
+ const sprite=b.sprite?{...b.sprite,frames:b.sprite.frames.map(frame=>frame?frame.map(storeLayer):null)}:undefined;
+ return {...b,assets,layers,sprite};
 }
 async function restore(data){
  const assets=await Promise.all(data.assets.map(a=>decodeAsset(a.url==='@demo'?demoURL:a.url==='@pixels'?pixelDemoURL:a.url,a.name)));
  const {assets:stored,...b}=data;
  b.width=b.width||32;b.height=b.height||32;
- b.layers=b.layers.map(l=>({...l,asset:l.asset===null?null:assets[l.asset]}));b.status='工作台已恢复';return b;
+ const unpack=l=>({...l,asset:l.asset===null?null:assets[l.asset]});
+ b.layers=b.layers.map(unpack);
+ if(b.sprite)b.sprite.frames=b.sprite.frames.map(frame=>frame?frame.map(unpack):null);b.status='工作台已恢复';return b;
 }
 function saveNow(b){
  clearTimeout(timers.get(b));timers.delete(b);if(!db||!boards.includes(b))return;
@@ -574,5 +614,1249 @@ async function start(){
  }
  rememberActive();refresh(false);document.body.inert=false;
 }
+const gifCodec=(()=>{const exports={};
+/* gifenc 1.0.3
+The MIT License (MIT)
+Copyright (c) 2017 Matt DesLauriers
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+var __defProp = Object.defineProperty;
+var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, {get: all[name], enumerable: true});
+};
+
+// src/index.js
+__markAsModule(exports);
+__export(exports, {
+  GIFEncoder: () => GIFEncoder,
+  applyPalette: () => applyPalette,
+  default: () => src_default,
+  nearestColor: () => nearestColor,
+  nearestColorIndex: () => nearestColorIndex,
+  nearestColorIndexWithDistance: () => nearestColorIndexWithDistance,
+  prequantize: () => prequantize,
+  quantize: () => quantize,
+  snapColorsToPalette: () => snapColorsToPalette
+});
+
+// src/constants.js
+var constants_default = {
+  signature: "GIF",
+  version: "89a",
+  trailer: 59,
+  extensionIntroducer: 33,
+  applicationExtensionLabel: 255,
+  graphicControlExtensionLabel: 249,
+  imageSeparator: 44,
+  signatureSize: 3,
+  versionSize: 3,
+  globalColorTableFlagMask: 128,
+  colorResolutionMask: 112,
+  sortFlagMask: 8,
+  globalColorTableSizeMask: 7,
+  applicationIdentifierSize: 8,
+  applicationAuthCodeSize: 3,
+  disposalMethodMask: 28,
+  userInputFlagMask: 2,
+  transparentColorFlagMask: 1,
+  localColorTableFlagMask: 128,
+  interlaceFlagMask: 64,
+  idSortFlagMask: 32,
+  localColorTableSizeMask: 7
+};
+
+// src/stream.js
+function createStream(initialCapacity = 256) {
+  let cursor = 0;
+  let contents = new Uint8Array(initialCapacity);
+  return {
+    get buffer() {
+      return contents.buffer;
+    },
+    reset() {
+      cursor = 0;
+    },
+    bytesView() {
+      return contents.subarray(0, cursor);
+    },
+    bytes() {
+      return contents.slice(0, cursor);
+    },
+    writeByte(byte) {
+      expand(cursor + 1);
+      contents[cursor] = byte;
+      cursor++;
+    },
+    writeBytes(data, offset = 0, byteLength = data.length) {
+      expand(cursor + byteLength);
+      for (let i = 0; i < byteLength; i++) {
+        contents[cursor++] = data[i + offset];
+      }
+    },
+    writeBytesView(data, offset = 0, byteLength = data.byteLength) {
+      expand(cursor + byteLength);
+      contents.set(data.subarray(offset, offset + byteLength), cursor);
+      cursor += byteLength;
+    }
+  };
+  function expand(newCapacity) {
+    var prevCapacity = contents.length;
+    if (prevCapacity >= newCapacity)
+      return;
+    var CAPACITY_DOUBLING_MAX = 1024 * 1024;
+    newCapacity = Math.max(newCapacity, prevCapacity * (prevCapacity < CAPACITY_DOUBLING_MAX ? 2 : 1.125) >>> 0);
+    if (prevCapacity != 0)
+      newCapacity = Math.max(newCapacity, 256);
+    const oldContents = contents;
+    contents = new Uint8Array(newCapacity);
+    if (cursor > 0)
+      contents.set(oldContents.subarray(0, cursor), 0);
+  }
+}
+
+// src/lzwEncode.js
+var BITS = 12;
+var DEFAULT_HSIZE = 5003;
+var MASKS = [
+  0,
+  1,
+  3,
+  7,
+  15,
+  31,
+  63,
+  127,
+  255,
+  511,
+  1023,
+  2047,
+  4095,
+  8191,
+  16383,
+  32767,
+  65535
+];
+function lzwEncode(width, height, pixels, colorDepth, outStream = createStream(512), accum = new Uint8Array(256), htab = new Int32Array(DEFAULT_HSIZE), codetab = new Int32Array(DEFAULT_HSIZE)) {
+  const hsize = htab.length;
+  const initCodeSize = Math.max(2, colorDepth);
+  accum.fill(0);
+  codetab.fill(0);
+  htab.fill(-1);
+  let cur_accum = 0;
+  let cur_bits = 0;
+  const init_bits = initCodeSize + 1;
+  const g_init_bits = init_bits;
+  let clear_flg = false;
+  let n_bits = g_init_bits;
+  let maxcode = (1 << n_bits) - 1;
+  const ClearCode = 1 << init_bits - 1;
+  const EOFCode = ClearCode + 1;
+  let free_ent = ClearCode + 2;
+  let a_count = 0;
+  let ent = pixels[0];
+  let hshift = 0;
+  for (let fcode = hsize; fcode < 65536; fcode *= 2) {
+    ++hshift;
+  }
+  hshift = 8 - hshift;
+  outStream.writeByte(initCodeSize);
+  output(ClearCode);
+  const length = pixels.length;
+  for (let idx = 1; idx < length; idx++) {
+    next_block: {
+      const c = pixels[idx];
+      const fcode = (c << BITS) + ent;
+      let i = c << hshift ^ ent;
+      if (htab[i] === fcode) {
+        ent = codetab[i];
+        break next_block;
+      }
+      const disp = i === 0 ? 1 : hsize - i;
+      while (htab[i] >= 0) {
+        i -= disp;
+        if (i < 0)
+          i += hsize;
+        if (htab[i] === fcode) {
+          ent = codetab[i];
+          break next_block;
+        }
+      }
+      output(ent);
+      ent = c;
+      if (free_ent < 1 << BITS) {
+        codetab[i] = free_ent++;
+        htab[i] = fcode;
+      } else {
+        htab.fill(-1);
+        free_ent = ClearCode + 2;
+        clear_flg = true;
+        output(ClearCode);
+      }
+    }
+  }
+  output(ent);
+  output(EOFCode);
+  outStream.writeByte(0);
+  return outStream.bytesView();
+  function output(code) {
+    cur_accum &= MASKS[cur_bits];
+    if (cur_bits > 0)
+      cur_accum |= code << cur_bits;
+    else
+      cur_accum = code;
+    cur_bits += n_bits;
+    while (cur_bits >= 8) {
+      accum[a_count++] = cur_accum & 255;
+      if (a_count >= 254) {
+        outStream.writeByte(a_count);
+        outStream.writeBytesView(accum, 0, a_count);
+        a_count = 0;
+      }
+      cur_accum >>= 8;
+      cur_bits -= 8;
+    }
+    if (free_ent > maxcode || clear_flg) {
+      if (clear_flg) {
+        n_bits = g_init_bits;
+        maxcode = (1 << n_bits) - 1;
+        clear_flg = false;
+      } else {
+        ++n_bits;
+        maxcode = n_bits === BITS ? 1 << n_bits : (1 << n_bits) - 1;
+      }
+    }
+    if (code == EOFCode) {
+      while (cur_bits > 0) {
+        accum[a_count++] = cur_accum & 255;
+        if (a_count >= 254) {
+          outStream.writeByte(a_count);
+          outStream.writeBytesView(accum, 0, a_count);
+          a_count = 0;
+        }
+        cur_accum >>= 8;
+        cur_bits -= 8;
+      }
+      if (a_count > 0) {
+        outStream.writeByte(a_count);
+        outStream.writeBytesView(accum, 0, a_count);
+        a_count = 0;
+      }
+    }
+  }
+}
+var lzwEncode_default = lzwEncode;
+
+// src/rgb-packing.js
+function rgb888_to_rgb565(r, g, b) {
+  return r << 8 & 63488 | g << 2 & 992 | b >> 3;
+}
+function rgba8888_to_rgba4444(r, g, b, a) {
+  return r >> 4 | g & 240 | (b & 240) << 4 | (a & 240) << 8;
+}
+function rgb888_to_rgb444(r, g, b) {
+  return r >> 4 << 8 | g & 240 | b >> 4;
+}
+
+// src/pnnquant2.js
+function clamp(value, min, max) {
+  return value < min ? min : value > max ? max : value;
+}
+function sqr(value) {
+  return value * value;
+}
+function find_nn(bins, idx, hasAlpha) {
+  var nn = 0;
+  var err = 1e100;
+  const bin1 = bins[idx];
+  const n1 = bin1.cnt;
+  const wa = bin1.ac;
+  const wr = bin1.rc;
+  const wg = bin1.gc;
+  const wb = bin1.bc;
+  for (var i = bin1.fw; i != 0; i = bins[i].fw) {
+    const bin = bins[i];
+    const n2 = bin.cnt;
+    const nerr2 = n1 * n2 / (n1 + n2);
+    if (nerr2 >= err)
+      continue;
+    var nerr = 0;
+    if (hasAlpha) {
+      nerr += nerr2 * sqr(bin.ac - wa);
+      if (nerr >= err)
+        continue;
+    }
+    nerr += nerr2 * sqr(bin.rc - wr);
+    if (nerr >= err)
+      continue;
+    nerr += nerr2 * sqr(bin.gc - wg);
+    if (nerr >= err)
+      continue;
+    nerr += nerr2 * sqr(bin.bc - wb);
+    if (nerr >= err)
+      continue;
+    err = nerr;
+    nn = i;
+  }
+  bin1.err = err;
+  bin1.nn = nn;
+}
+function create_bin() {
+  return {
+    ac: 0,
+    rc: 0,
+    gc: 0,
+    bc: 0,
+    cnt: 0,
+    nn: 0,
+    fw: 0,
+    bk: 0,
+    tm: 0,
+    mtm: 0,
+    err: 0
+  };
+}
+function create_bin_list(data, format) {
+  const bincount = format === "rgb444" ? 4096 : 65536;
+  const bins = new Array(bincount);
+  const size = data.length;
+  if (format === "rgba4444") {
+    for (let i = 0; i < size; ++i) {
+      const color = data[i];
+      const a = color >> 24 & 255;
+      const b = color >> 16 & 255;
+      const g = color >> 8 & 255;
+      const r = color & 255;
+      const index = rgba8888_to_rgba4444(r, g, b, a);
+      let bin = index in bins ? bins[index] : bins[index] = create_bin();
+      bin.rc += r;
+      bin.gc += g;
+      bin.bc += b;
+      bin.ac += a;
+      bin.cnt++;
+    }
+  } else if (format === "rgb444") {
+    for (let i = 0; i < size; ++i) {
+      const color = data[i];
+      const b = color >> 16 & 255;
+      const g = color >> 8 & 255;
+      const r = color & 255;
+      const index = rgb888_to_rgb444(r, g, b);
+      let bin = index in bins ? bins[index] : bins[index] = create_bin();
+      bin.rc += r;
+      bin.gc += g;
+      bin.bc += b;
+      bin.cnt++;
+    }
+  } else {
+    for (let i = 0; i < size; ++i) {
+      const color = data[i];
+      const b = color >> 16 & 255;
+      const g = color >> 8 & 255;
+      const r = color & 255;
+      const index = rgb888_to_rgb565(r, g, b);
+      let bin = index in bins ? bins[index] : bins[index] = create_bin();
+      bin.rc += r;
+      bin.gc += g;
+      bin.bc += b;
+      bin.cnt++;
+    }
+  }
+  return bins;
+}
+function quantize(rgba, maxColors, opts = {}) {
+  const {
+    format = "rgb565",
+    clearAlpha = true,
+    clearAlphaColor = 0,
+    clearAlphaThreshold = 0,
+    oneBitAlpha = false
+  } = opts;
+  if (!rgba || !rgba.buffer) {
+    throw new Error("quantize() expected RGBA Uint8Array data");
+  }
+  if (!(rgba instanceof Uint8Array) && !(rgba instanceof Uint8ClampedArray)) {
+    throw new Error("quantize() expected RGBA Uint8Array data");
+  }
+  const data = new Uint32Array(rgba.buffer);
+  let useSqrt = opts.useSqrt !== false;
+  const hasAlpha = format === "rgba4444";
+  const bins = create_bin_list(data, format);
+  const bincount = bins.length;
+  const bincountMinusOne = bincount - 1;
+  const heap = new Uint32Array(bincount + 1);
+  var maxbins = 0;
+  for (var i = 0; i < bincount; ++i) {
+    const bin = bins[i];
+    if (bin != null) {
+      var d = 1 / bin.cnt;
+      if (hasAlpha)
+        bin.ac *= d;
+      bin.rc *= d;
+      bin.gc *= d;
+      bin.bc *= d;
+      bins[maxbins++] = bin;
+    }
+  }
+  if (sqr(maxColors) / maxbins < 0.022) {
+    useSqrt = false;
+  }
+  var i = 0;
+  for (; i < maxbins - 1; ++i) {
+    bins[i].fw = i + 1;
+    bins[i + 1].bk = i;
+    if (useSqrt)
+      bins[i].cnt = Math.sqrt(bins[i].cnt);
+  }
+  if (useSqrt)
+    bins[i].cnt = Math.sqrt(bins[i].cnt);
+  var h, l, l2;
+  for (i = 0; i < maxbins; ++i) {
+    find_nn(bins, i, false);
+    var err = bins[i].err;
+    for (l = ++heap[0]; l > 1; l = l2) {
+      l2 = l >> 1;
+      if (bins[h = heap[l2]].err <= err)
+        break;
+      heap[l] = h;
+    }
+    heap[l] = i;
+  }
+  var extbins = maxbins - maxColors;
+  for (i = 0; i < extbins; ) {
+    var tb;
+    for (; ; ) {
+      var b1 = heap[1];
+      tb = bins[b1];
+      if (tb.tm >= tb.mtm && bins[tb.nn].mtm <= tb.tm)
+        break;
+      if (tb.mtm == bincountMinusOne)
+        b1 = heap[1] = heap[heap[0]--];
+      else {
+        find_nn(bins, b1, false);
+        tb.tm = i;
+      }
+      var err = bins[b1].err;
+      for (l = 1; (l2 = l + l) <= heap[0]; l = l2) {
+        if (l2 < heap[0] && bins[heap[l2]].err > bins[heap[l2 + 1]].err)
+          l2++;
+        if (err <= bins[h = heap[l2]].err)
+          break;
+        heap[l] = h;
+      }
+      heap[l] = b1;
+    }
+    var nb = bins[tb.nn];
+    var n1 = tb.cnt;
+    var n2 = nb.cnt;
+    var d = 1 / (n1 + n2);
+    if (hasAlpha)
+      tb.ac = d * (n1 * tb.ac + n2 * nb.ac);
+    tb.rc = d * (n1 * tb.rc + n2 * nb.rc);
+    tb.gc = d * (n1 * tb.gc + n2 * nb.gc);
+    tb.bc = d * (n1 * tb.bc + n2 * nb.bc);
+    tb.cnt += nb.cnt;
+    tb.mtm = ++i;
+    bins[nb.bk].fw = nb.fw;
+    bins[nb.fw].bk = nb.bk;
+    nb.mtm = bincountMinusOne;
+  }
+  let palette = [];
+  var k = 0;
+  for (i = 0; ; ++k) {
+    let r = clamp(Math.round(bins[i].rc), 0, 255);
+    let g = clamp(Math.round(bins[i].gc), 0, 255);
+    let b = clamp(Math.round(bins[i].bc), 0, 255);
+    let a = 255;
+    if (hasAlpha) {
+      a = clamp(Math.round(bins[i].ac), 0, 255);
+      if (oneBitAlpha) {
+        const threshold = typeof oneBitAlpha === "number" ? oneBitAlpha : 127;
+        a = a <= threshold ? 0 : 255;
+      }
+      if (clearAlpha && a <= clearAlphaThreshold) {
+        r = g = b = clearAlphaColor;
+        a = 0;
+      }
+    }
+    const color = hasAlpha ? [r, g, b, a] : [r, g, b];
+    const exists = existsInPalette(palette, color);
+    if (!exists)
+      palette.push(color);
+    if ((i = bins[i].fw) == 0)
+      break;
+  }
+  return palette;
+}
+function existsInPalette(palette, color) {
+  for (let i = 0; i < palette.length; i++) {
+    const p = palette[i];
+    let matchesRGB = p[0] === color[0] && p[1] === color[1] && p[2] === color[2];
+    let matchesAlpha = p.length >= 4 && color.length >= 4 ? p[3] === color[3] : true;
+    if (matchesRGB && matchesAlpha)
+      return true;
+  }
+  return false;
+}
+
+// src/color.js
+function euclideanDistanceSquared(a, b) {
+  var sum = 0;
+  var n;
+  for (n = 0; n < a.length; n++) {
+    const dx = a[n] - b[n];
+    sum += dx * dx;
+  }
+  return sum;
+}
+
+// src/palettize.js
+function roundStep(byte, step) {
+  return step > 1 ? Math.round(byte / step) * step : byte;
+}
+function prequantize(rgba, {roundRGB = 5, roundAlpha = 10, oneBitAlpha = null} = {}) {
+  const data = new Uint32Array(rgba.buffer);
+  for (let i = 0; i < data.length; i++) {
+    const color = data[i];
+    let a = color >> 24 & 255;
+    let b = color >> 16 & 255;
+    let g = color >> 8 & 255;
+    let r = color & 255;
+    a = roundStep(a, roundAlpha);
+    if (oneBitAlpha) {
+      const threshold = typeof oneBitAlpha === "number" ? oneBitAlpha : 127;
+      a = a <= threshold ? 0 : 255;
+    }
+    r = roundStep(r, roundRGB);
+    g = roundStep(g, roundRGB);
+    b = roundStep(b, roundRGB);
+    data[i] = a << 24 | b << 16 | g << 8 | r << 0;
+  }
+}
+function applyPalette(rgba, palette, format = "rgb565") {
+  if (!rgba || !rgba.buffer) {
+    throw new Error("quantize() expected RGBA Uint8Array data");
+  }
+  if (!(rgba instanceof Uint8Array) && !(rgba instanceof Uint8ClampedArray)) {
+    throw new Error("quantize() expected RGBA Uint8Array data");
+  }
+  if (palette.length > 256) {
+    throw new Error("applyPalette() only works with 256 colors or less");
+  }
+  const data = new Uint32Array(rgba.buffer);
+  const length = data.length;
+  const bincount = format === "rgb444" ? 4096 : 65536;
+  const index = new Uint8Array(length);
+  const cache = new Array(bincount);
+  const hasAlpha = format === "rgba4444";
+  if (format === "rgba4444") {
+    for (let i = 0; i < length; i++) {
+      const color = data[i];
+      const a = color >> 24 & 255;
+      const b = color >> 16 & 255;
+      const g = color >> 8 & 255;
+      const r = color & 255;
+      const key = rgba8888_to_rgba4444(r, g, b, a);
+      const idx = key in cache ? cache[key] : cache[key] = nearestColorIndexRGBA(r, g, b, a, palette);
+      index[i] = idx;
+    }
+  } else {
+    const rgb888_to_key = format === "rgb444" ? rgb888_to_rgb444 : rgb888_to_rgb565;
+    for (let i = 0; i < length; i++) {
+      const color = data[i];
+      const b = color >> 16 & 255;
+      const g = color >> 8 & 255;
+      const r = color & 255;
+      const key = rgb888_to_key(r, g, b);
+      const idx = key in cache ? cache[key] : cache[key] = nearestColorIndexRGB(r, g, b, palette);
+      index[i] = idx;
+    }
+  }
+  return index;
+}
+function nearestColorIndexRGBA(r, g, b, a, palette) {
+  let k = 0;
+  let mindist = 1e100;
+  for (let i = 0; i < palette.length; i++) {
+    const px2 = palette[i];
+    const a2 = px2[3];
+    let curdist = sqr2(a2 - a);
+    if (curdist > mindist)
+      continue;
+    const r2 = px2[0];
+    curdist += sqr2(r2 - r);
+    if (curdist > mindist)
+      continue;
+    const g2 = px2[1];
+    curdist += sqr2(g2 - g);
+    if (curdist > mindist)
+      continue;
+    const b2 = px2[2];
+    curdist += sqr2(b2 - b);
+    if (curdist > mindist)
+      continue;
+    mindist = curdist;
+    k = i;
+  }
+  return k;
+}
+function nearestColorIndexRGB(r, g, b, palette) {
+  let k = 0;
+  let mindist = 1e100;
+  for (let i = 0; i < palette.length; i++) {
+    const px2 = palette[i];
+    const r2 = px2[0];
+    let curdist = sqr2(r2 - r);
+    if (curdist > mindist)
+      continue;
+    const g2 = px2[1];
+    curdist += sqr2(g2 - g);
+    if (curdist > mindist)
+      continue;
+    const b2 = px2[2];
+    curdist += sqr2(b2 - b);
+    if (curdist > mindist)
+      continue;
+    mindist = curdist;
+    k = i;
+  }
+  return k;
+}
+function snapColorsToPalette(palette, knownColors, threshold = 5) {
+  if (!palette.length || !knownColors.length)
+    return;
+  const paletteRGB = palette.map((p) => p.slice(0, 3));
+  const thresholdSq = threshold * threshold;
+  const dim = palette[0].length;
+  for (let i = 0; i < knownColors.length; i++) {
+    let color = knownColors[i];
+    if (color.length < dim) {
+      color = [color[0], color[1], color[2], 255];
+    } else if (color.length > dim) {
+      color = color.slice(0, 3);
+    } else {
+      color = color.slice();
+    }
+    const r = nearestColorIndexWithDistance(paletteRGB, color.slice(0, 3), euclideanDistanceSquared);
+    const idx = r[0];
+    const distanceSq = r[1];
+    if (distanceSq > 0 && distanceSq <= thresholdSq) {
+      palette[idx] = color;
+    }
+  }
+}
+function sqr2(a) {
+  return a * a;
+}
+function nearestColorIndex(colors, pixel, distanceFn = euclideanDistanceSquared) {
+  let minDist = Infinity;
+  let minDistIndex = -1;
+  for (let j = 0; j < colors.length; j++) {
+    const paletteColor = colors[j];
+    const dist = distanceFn(pixel, paletteColor);
+    if (dist < minDist) {
+      minDist = dist;
+      minDistIndex = j;
+    }
+  }
+  return minDistIndex;
+}
+function nearestColorIndexWithDistance(colors, pixel, distanceFn = euclideanDistanceSquared) {
+  let minDist = Infinity;
+  let minDistIndex = -1;
+  for (let j = 0; j < colors.length; j++) {
+    const paletteColor = colors[j];
+    const dist = distanceFn(pixel, paletteColor);
+    if (dist < minDist) {
+      minDist = dist;
+      minDistIndex = j;
+    }
+  }
+  return [minDistIndex, minDist];
+}
+function nearestColor(colors, pixel, distanceFn = euclideanDistanceSquared) {
+  return colors[nearestColorIndex(colors, pixel, distanceFn)];
+}
+
+// src/index.js
+function GIFEncoder(opt = {}) {
+  const {initialCapacity = 4096, auto = true} = opt;
+  const stream = createStream(initialCapacity);
+  const HSIZE = 5003;
+  const accum = new Uint8Array(256);
+  const htab = new Int32Array(HSIZE);
+  const codetab = new Int32Array(HSIZE);
+  let hasInit = false;
+  return {
+    reset() {
+      stream.reset();
+      hasInit = false;
+    },
+    finish() {
+      stream.writeByte(constants_default.trailer);
+    },
+    bytes() {
+      return stream.bytes();
+    },
+    bytesView() {
+      return stream.bytesView();
+    },
+    get buffer() {
+      return stream.buffer;
+    },
+    get stream() {
+      return stream;
+    },
+    writeHeader,
+    writeFrame(index, width, height, opts = {}) {
+      const {
+        transparent = false,
+        transparentIndex = 0,
+        delay = 0,
+        palette = null,
+        repeat = 0,
+        colorDepth = 8,
+        dispose = -1
+      } = opts;
+      let first = false;
+      if (auto) {
+        if (!hasInit) {
+          first = true;
+          writeHeader();
+          hasInit = true;
+        }
+      } else {
+        first = Boolean(opts.first);
+      }
+      width = Math.max(0, Math.floor(width));
+      height = Math.max(0, Math.floor(height));
+      if (first) {
+        if (!palette) {
+          throw new Error("First frame must include a { palette } option");
+        }
+        encodeLogicalScreenDescriptor(stream, width, height, palette, colorDepth);
+        encodeColorTable(stream, palette);
+        if (repeat >= 0) {
+          encodeNetscapeExt(stream, repeat);
+        }
+      }
+      const delayTime = Math.round(delay / 10);
+      encodeGraphicControlExt(stream, dispose, delayTime, transparent, transparentIndex);
+      const useLocalColorTable = Boolean(palette) && !first;
+      encodeImageDescriptor(stream, width, height, useLocalColorTable ? palette : null);
+      if (useLocalColorTable)
+        encodeColorTable(stream, palette);
+      encodePixels(stream, index, width, height, colorDepth, accum, htab, codetab);
+    }
+  };
+  function writeHeader() {
+    writeUTFBytes(stream, "GIF89a");
+  }
+}
+function encodeGraphicControlExt(stream, dispose, delay, transparent, transparentIndex) {
+  stream.writeByte(33);
+  stream.writeByte(249);
+  stream.writeByte(4);
+  if (transparentIndex < 0) {
+    transparentIndex = 0;
+    transparent = false;
+  }
+  var transp, disp;
+  if (!transparent) {
+    transp = 0;
+    disp = 0;
+  } else {
+    transp = 1;
+    disp = 2;
+  }
+  if (dispose >= 0) {
+    disp = dispose & 7;
+  }
+  disp <<= 2;
+  const userInput = 0;
+  stream.writeByte(0 | disp | userInput | transp);
+  writeUInt16(stream, delay);
+  stream.writeByte(transparentIndex || 0);
+  stream.writeByte(0);
+}
+function encodeLogicalScreenDescriptor(stream, width, height, palette, colorDepth = 8) {
+  const globalColorTableFlag = 1;
+  const sortFlag = 0;
+  const globalColorTableSize = colorTableSize(palette.length) - 1;
+  const fields = globalColorTableFlag << 7 | colorDepth - 1 << 4 | sortFlag << 3 | globalColorTableSize;
+  const backgroundColorIndex = 0;
+  const pixelAspectRatio = 0;
+  writeUInt16(stream, width);
+  writeUInt16(stream, height);
+  stream.writeBytes([fields, backgroundColorIndex, pixelAspectRatio]);
+}
+function encodeNetscapeExt(stream, repeat) {
+  stream.writeByte(33);
+  stream.writeByte(255);
+  stream.writeByte(11);
+  writeUTFBytes(stream, "NETSCAPE2.0");
+  stream.writeByte(3);
+  stream.writeByte(1);
+  writeUInt16(stream, repeat);
+  stream.writeByte(0);
+}
+function encodeColorTable(stream, palette) {
+  const colorTableLength = 1 << colorTableSize(palette.length);
+  for (let i = 0; i < colorTableLength; i++) {
+    let color = [0, 0, 0];
+    if (i < palette.length) {
+      color = palette[i];
+    }
+    stream.writeByte(color[0]);
+    stream.writeByte(color[1]);
+    stream.writeByte(color[2]);
+  }
+}
+function encodeImageDescriptor(stream, width, height, localPalette) {
+  stream.writeByte(44);
+  writeUInt16(stream, 0);
+  writeUInt16(stream, 0);
+  writeUInt16(stream, width);
+  writeUInt16(stream, height);
+  if (localPalette) {
+    const interlace = 0;
+    const sorted = 0;
+    const palSize = colorTableSize(localPalette.length) - 1;
+    stream.writeByte(128 | interlace | sorted | 0 | palSize);
+  } else {
+    stream.writeByte(0);
+  }
+}
+function encodePixels(stream, index, width, height, colorDepth = 8, accum, htab, codetab) {
+  lzwEncode_default(width, height, index, colorDepth, stream, accum, htab, codetab);
+}
+function writeUInt16(stream, short) {
+  stream.writeByte(short & 255);
+  stream.writeByte(short >> 8 & 255);
+}
+function writeUTFBytes(stream, text) {
+  for (var i = 0; i < text.length; i++) {
+    stream.writeByte(text.charCodeAt(i));
+  }
+}
+function colorTableSize(length) {
+  return Math.max(Math.ceil(Math.log2(length)), 1);
+}
+var src_default = GIFEncoder;
+
+return exports;})();
+function frameLayers(b,i){
+ return b.sprite.active===i?b.layers:b.sprite.frames[i];
+}
+function copyFrame(layers){
+ return layers.map(l=>({...l,id:uid(),original:{...l.original},colors:[...l.colors]}));
+}
+function compose(canvas,b,original=false){
+ if(!b.sprite)return composeFrame(canvas,b,original);
+ const ctx=canvas.getContext('2d',{willReadFrequently:true}),h=b.sprite.frameHeight;
+ const tile=createCanvas(b.width,h),ox=Math.floor((canvas.width-b.width)/2),oy=Math.floor((canvas.height-b.height)/2);
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+ for(let i=0;i<b.sprite.frames.length;i++){
+  const y=oy+i*h;if(y+h<=0||y>=canvas.height)continue;
+  composeFrame(tile,{...b,height:h,layers:frameLayers(b,i)},original);
+  ctx.drawImage(tile,ox,y);
+ }
+}
+function frameControls(){
+ const s=board.sprite,select=$('editFrame');
+ select.hidden=!s;select.parentElement.hidden=!s;
+ if(!s){select.replaceChildren();return}
+ if(select.options.length!==s.frames.length){
+  select.replaceChildren();s.frames.forEach((_,i)=>select.add(new Option('帧 '+i,i)));
+ }
+ select.value=s.active;
+}
+$('editFrame').onchange=e=>{
+ const s=board.sprite,idx=Number(e.target.value);s.frames[s.active]=board.layers;
+ board.layers=s.frames[idx];s.frames[idx]=null;s.active=idx;board.selected=board.layers.at(-1)?.id??null;refresh();
+};
+$('makeSheet').onclick=()=>{
+ $('frameCount').value=board.sprite?.frames.length||1;sheetHint();$('sheetDialog').showModal();$('frameCount').select();
+};
+function sheetHint(){
+ const n=$('frameCount').valueAsNumber,h=board.sprite?.frameHeight||board.height;
+ $('sheetHint').textContent=Number.isSafeInteger(n)&&n>=1?'单帧 '+board.width+' × '+h+' px，序列 '+board.width+' × '+h*n+' px'+(board.sprite&&n<board.sprite.frames.length?'。缩短序列将移除末尾帧。':''):'请输入至少 1 帧。';
+}
+$('frameCount').oninput=sheetHint;
+$('sheetForm').onsubmit=e=>{
+ e.preventDefault();const n=$('frameCount').valueAsNumber;
+ if(!Number.isSafeInteger(n)||n<1)return;
+ const prev=board.sprite,h=prev?.frameHeight||board.height;
+ if(n*h>32767||n*h*board.width>16777216){$('sheetHint').textContent='序列过大。请减少帧数，使总高不超过 32767 px、总像素不超过 16777216。';return}
+ const first=prev?frameLayers(board,0):board.layers;
+ const frames=Array.from({length:n},(_,i)=>prev&&i<prev.frames.length?frameLayers(board,i):i===0?first:copyFrame(first));
+ const active=Math.min(prev?.active||0,n-1);board.layers=frames[active];frames[active]=null;
+ board.sprite={active,frameHeight:h,frames};
+ if(prev?.delays)board.sprite.delays=Array.from({length:n},(_,i)=>prev.delays[i]??prev.delays[0]);board.height=n*h;board.fps=board.fps||12;
+ if(!board.layers.some(l=>l.id===board.selected))board.selected=board.layers.at(-1)?.id??null;
+ board.comparing=false;board.panX=board.panY=0;board.zoom=100;
+ board.status='已生成 '+n+' 帧纵向精灵序列';$('sheetDialog').close();refresh();
+};
+$('closeSheet').onclick=()=>$('sheetDialog').close();
+let player=null,animation=0;
+function stopPlayback(){
+ cancelAnimationFrame(animation);animation=0;$('playFrames').textContent='播放';
+}
+function showFrame(i){
+ if(!player||!Number.isFinite(i))return;
+ i=Math.max(0,Math.min(player.count-1,Math.trunc(i)));
+ player.index=i;const {sheet,h}=player,view=$('frameWindow');
+ if(view.width!==sheet.width)view.width=sheet.width;if(view.height!==h)view.height=h;
+ const ctx=view.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.clearRect(0,0,view.width,h);
+ ctx.drawImage(sheet,0,i*h,sheet.width,h,0,0,sheet.width,h);
+ $('scrubber').value=i;$('frameReadout').textContent='帧 '+i+' / '+(player.count-1);
+ const ticks=$('ticks');ticks.querySelector('[aria-current]')?.removeAttribute('aria-current');
+ const tick=ticks.children[i];tick.setAttribute('aria-current','step');
+ if(tick.offsetLeft<ticks.scrollLeft||tick.offsetLeft+tick.offsetWidth>ticks.scrollLeft+ticks.clientWidth)ticks.scrollLeft=tick.offsetLeft;
+}
+function setSliceHeight(){
+ stopPlayback();const h=$('sliceH').valueAsNumber,p=player;
+ if(!Number.isInteger(h)||h<1||p.sheet.height%h){$('sliceH').setCustomValidity('单帧高度必须能整除序列总高度');$('sliceH').reportValidity();$('gifSave').disabled=$('playFrames').disabled=true;return}
+ $('sliceH').setCustomValidity('');$('gifSave').disabled=false;
+ p.h=h;p.count=p.sheet.height/h;$('playFrames').disabled=p.count<2;
+ const ticks=document.createDocumentFragment();
+ for(let i=0;i<p.count;i++){const btn=document.createElement('button');btn.type='button';btn.textContent=i;btn.title='跳到帧 '+i;btn.onclick=()=>{stopPlayback();showFrame(i)};ticks.append(btn)}
+ $('ticks').replaceChildren(ticks);$('scrubber').max=p.count-1;$('scrubber').disabled=p.count===1;showFrame(0);
+}
+$('animPreview').onclick=()=>{
+ const sheet=createCanvas(board.width,board.height);compose(sheet,board);player={sheet,board,index:0,count:1};
+ $('sliceH').value=board.sprite?.frameHeight||board.sheetSlice||board.height;$('sliceH').max=board.height;
+ $('sliceH').disabled=!!board.sprite;$('fps').value=board.fps||12;$('gifStatus').textContent='';
+ $('timingLabel').hidden=!board.sprite?.delays;
+ $('timingMode').value=board.originalTiming&&board.sprite?.delays?'original':'fixed';
+ $('fps').disabled=$('timingMode').value==='original';
+ $('playerDialog').showModal();setSliceHeight();
+};
+$('sliceH').oninput=()=>{setSliceHeight();if($('sliceH').validity.valid){board.sheetSlice=player.h;saveLater(board)}};
+$('scrubber').oninput=e=>{stopPlayback();showFrame(Number(e.target.value))};
+function startPlayback(){
+ if(!$('fps').reportValidity()||player.count<=1)return;
+ const p=player,rate=$('fps').valueAsNumber,initial=p.index;
+ const delays=p.board.originalTiming?p.board.sprite?.delays:null;
+ let start,total=0;
+ const ends=delays?.map(d=>(total+=d||100));
+ $('playFrames').textContent='暂停';
+ function step(now){
+  if(player!==p||!$('playerDialog').open)return;
+  start??=now;
+  const elapsed=Math.max(0,now-start);
+  let index;
+  if(ends){
+   const phase=(elapsed+(ends[initial-1]||0))%total;
+   let left=0,right=ends.length-1;while(left<right){const mid=(left+right)>>>1;if(ends[mid]<=phase)left=mid+1;else right=mid}index=left;
+  }else index=(initial+Math.floor(elapsed*rate/1000))%p.count;
+  if(index!==p.index)showFrame(index);animation=requestAnimationFrame(step);
+ }
+ animation=requestAnimationFrame(step);
+}
+$('playFrames').onclick=()=>animation?stopPlayback():startPlayback();
+$('timingMode').onchange=e=>{
+ const running=!!animation;stopPlayback();board.originalTiming=e.target.value==='original';
+ $('fps').disabled=board.originalTiming;saveLater(board);if(running)startPlayback();
+};
+$('fps').oninput=()=>{
+ const running=!!animation;stopPlayback();if(!$('fps').validity.valid)return;
+ board.fps=$('fps').valueAsNumber;saveLater(board);if(running)startPlayback();
+};
+$('closePlayer').onclick=()=>$('playerDialog').close();
+$('playerDialog').addEventListener('close',()=>{stopPlayback();player=null});
+function encodePixels(rgba){
+ const exact=new Map(),palette=[[0,0,0]],indexed=new Uint8Array(rgba.length/4);let transparent=false,overflow=false;
+ for(let p=0;p<indexed.length;p++){
+  const i=p*4;if(rgba[i+3]<128){transparent=true;continue}
+  const key=rgba[i]*65536+rgba[i+1]*256+rgba[i+2];
+  let entry=exact.get(key);
+  if(entry===undefined){if(palette.length===256){overflow=true;break}entry=palette.length;exact.set(key,entry);palette.push([rgba[i],rgba[i+1],rgba[i+2]])}
+  indexed[p]=entry;
+ }
+ if(!overflow){if(palette.length===1)palette.push([0,0,0]);return {indexed,palette,transparent}}
+ const samples=Uint8Array.from(rgba),colors=gifCodec.quantize(samples,255),indices=gifCodec.applyPalette(samples,colors);
+ for(let p=0;p<indices.length;p++){if(rgba[p*4+3]<128){transparent=true;indices[p]=0}else indices[p]++}
+ return {indexed:indices,palette:[[0,0,0],...colors],transparent};
+}
+$('gifSave').onclick=async()=>{
+ if(!$('fps').reportValidity()||!$('sliceH').validity.valid)return;
+ stopPlayback();const p=player,rate=$('fps').valueAsNumber,h=p.h,w=p.sheet.width,count=p.count;
+ const button=$('gifSave');button.disabled=true;
+ const encoder=gifCodec.GIFEncoder(),ctx=p.sheet.getContext('2d',{willReadFrequently:true});
+ try{
+  for(let i=0;i<count;i++){
+   if(player!==p||!$('playerDialog').open)return;
+   $('gifStatus').textContent='正在编码 '+(i+1)+' / '+count;
+   const data=encodePixels(ctx.getImageData(0,i*h,w,h).data);
+   const delay=p.board.originalTiming&&p.board.sprite?.delays?p.board.sprite.delays[i]:10*(Math.round((i+1)*100/rate)-Math.round(i*100/rate));
+   encoder.writeFrame(data.indexed,w,h,{palette:data.palette,transparent:true,transparentIndex:0,dispose:2,delay,repeat:0});
+   if(i%4===0)await new Promise(resolve=>setTimeout(resolve,0));
+  }
+  if(player!==p||!$('playerDialog').open)return;
+  encoder.finish();const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([encoder.bytesView()],{type:'image/gif'}));a.download=titleOf(p.board)+'-精灵动画.gif';a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),60000);$('gifStatus').textContent='GIF 已导出';
+ }catch{$('gifStatus').textContent='GIF 编码失败，请检查帧尺寸。'}finally{if(player===p)button.disabled=false}
+};
+
+// (c) Dean McNamee <dean@gmail.com>, 2013.
+//
+// https://github.com/deanm/omggif
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+//
+// omggif is a JavaScript implementation of a GIF 89a encoder and decoder,
+// including animation and compression.  It does not rely on any specific
+// underlying system, so should run in the browser, Node, or Plask.
+
+function GifReaderLZWOutputIndexStream(code_stream, p, output, output_length) {
+  var min_code_size = code_stream[p++];
+
+  var clear_code = 1 << min_code_size;
+  var eoi_code = clear_code + 1;
+  var next_code = eoi_code + 1;
+
+  var cur_code_size = min_code_size + 1;  // Number of bits per code.
+  // NOTE: This shares the same name as the encoder, but has a different
+  // meaning here.  Here this masks each code coming from the code stream.
+  var code_mask = (1 << cur_code_size) - 1;
+  var cur_shift = 0;
+  var cur = 0;
+
+  var op = 0;  // Output pointer.
+
+  var subblock_size = code_stream[p++];
+
+  // TODO(deanm): Would using a TypedArray be any faster?  At least it would
+  // solve the fast mode / backing store uncertainty.
+  // var code_table = Array(4096);
+  var code_table = new Int32Array(4096);  // Can be signed, we only use 20 bits.
+
+  var prev_code = null;  // Track code-1.
+
+  while (true) {
+    // Read up to two bytes, making sure we always 12-bits for max sized code.
+    while (cur_shift < 16) {
+      if (subblock_size === 0) break;  // No more data to be read.
+
+      cur |= code_stream[p++] << cur_shift;
+      cur_shift += 8;
+
+      if (subblock_size === 1) {  // Never let it get to 0 to hold logic above.
+        subblock_size = code_stream[p++];  // Next subblock.
+      } else {
+        --subblock_size;
+      }
+    }
+
+    // TODO(deanm): We should never really get here, we should have received
+    // and EOI.
+    if (cur_shift < cur_code_size)
+      break;
+
+    var code = cur & code_mask;
+    cur >>= cur_code_size;
+    cur_shift -= cur_code_size;
+
+    // TODO(deanm): Maybe should check that the first code was a clear code,
+    // at least this is what you're supposed to do.  But actually our encoder
+    // now doesn't emit a clear code first anyway.
+    if (code === clear_code) {
+      // We don't actually have to clear the table.  This could be a good idea
+      // for greater error checking, but we don't really do any anyway.  We
+      // will just track it with next_code and overwrite old entries.
+
+      next_code = eoi_code + 1;
+      cur_code_size = min_code_size + 1;
+      code_mask = (1 << cur_code_size) - 1;
+
+      // Don't update prev_code ?
+      prev_code = null;
+      continue;
+    } else if (code === eoi_code) {
+      break;
+    }
+
+    // We have a similar situation as the decoder, where we want to store
+    // variable length entries (code table entries), but we want to do in a
+    // faster manner than an array of arrays.  The code below stores sort of a
+    // linked list within the code table, and then "chases" through it to
+    // construct the dictionary entries.  When a new entry is created, just the
+    // last byte is stored, and the rest (prefix) of the entry is only
+    // referenced by its table entry.  Then the code chases through the
+    // prefixes until it reaches a single byte code.  We have to chase twice,
+    // first to compute the length, and then to actually copy the data to the
+    // output (backwards, since we know the length).  The alternative would be
+    // storing something in an intermediate stack, but that doesn't make any
+    // more sense.  I implemented an approach where it also stored the length
+    // in the code table, although it's a bit tricky because you run out of
+    // bits (12 + 12 + 8), but I didn't measure much improvements (the table
+    // entries are generally not the long).  Even when I created benchmarks for
+    // very long table entries the complexity did not seem worth it.
+    // The code table stores the prefix entry in 12 bits and then the suffix
+    // byte in 8 bits, so each entry is 20 bits.
+
+    if(code>next_code || (code===next_code && prev_code===null))throw Error("GIF 字典索引无效");
+    var chase_code = code < next_code ? code : prev_code;
+
+    // Chase what we will output, either {CODE} or {CODE-1}.
+    var chase_length = 0;
+    var chase = chase_code;
+    while (chase > clear_code) {
+      chase = code_table[chase] >> 8;
+      ++chase_length;
+    }
+
+    var k = chase;
+
+    var op_end = op + chase_length + (chase_code !== code ? 1 : 0);
+    if (op_end > output_length) {
+      throw Error("GIF 像素数据过长");
+    }
+
+    // Already have the first byte from the chase, might as well write it fast.
+    output[op++] = k;
+
+    op += chase_length;
+    var b = op;  // Track pointer, writing backwards.
+
+    if (chase_code !== code)  // The case of emitting {CODE-1} + k.
+      output[op++] = k;
+
+    chase = chase_code;
+    while (chase_length--) {
+      chase = code_table[chase];
+      output[--b] = chase & 0xff;  // Write backwards.
+      chase >>= 8;  // Pull down to the prefix code.
+    }
+
+    if (prev_code !== null && next_code < 4096) {
+      code_table[next_code++] = prev_code << 8 | k;
+      // TODO(deanm): Figure out this clearing vs code growth logic better.  I
+      // have an feeling that it should just happen somewhere else, for now it
+      // is awkward between when we grow past the max and then hit a clear code.
+      // For now just check if we hit the max 12-bits (then a clear code should
+      // follow, also of course encoded in 12-bits).
+      if (next_code >= code_mask+1 && cur_code_size < 12) {
+        ++cur_code_size;
+        code_mask = code_mask << 1 | 1;
+      }
+    }
+
+    prev_code = code;
+  }
+
+  if (op !== output_length) {
+    throw Error("GIF 像素数据不完整");
+  }
+
+  return output;
+}
+
+
+function parseGif(bytes){
+ let pos=6;
+ function take(n){if(pos+n>bytes.length)throw Error('GIF 数据不完整');const start=pos;pos+=n;return start}
+ function byte(){return bytes[take(1)]}
+ function word(){const p=take(2);return bytes[p]+256*bytes[p+1]}
+ function skipBlocks(){for(let n=byte();n;n=byte())take(n)}
+ function palette(flags){
+  if(!(flags&128))return null;
+  const length=3*(2<<(flags&7)),start=take(length);
+  return bytes.subarray(start,start+length);
+ }
+ const width=word(),height=word(),flags=byte(),background=byte();byte();
+ if(!width||!height||width>32767||height>32767||width*height>16777216)throw Error('GIF 单帧尺寸超过画布范围');
+ const global=palette(flags),frames=[];let control={};
+ while(pos<bytes.length){
+  const tag=byte();if(tag===0x3b)break;
+  if(tag===0x21){
+   const ext=byte();
+   if(ext===0xf9){
+    if(byte()!==4)throw Error('GIF 帧控制块无效');
+    const f=byte(),delay=word()*10,index=byte();if(byte()!==0)throw Error('GIF 帧控制块不完整');
+    control={delay,dispose:(f>>>2)&7,transparent:(f&1)?index:-1};
+   }else{skipBlocks();if(ext===1)control={}}
+   continue;
+  }
+  if(tag!==0x2c)throw Error('GIF 图像描述无效');
+  const x=word(),y=word(),w=word(),h=word(),f=byte(),colors=palette(f)||global;
+  if(!colors||!w||!h||x+w>width||y+h>height)throw Error('GIF 帧范围或色表无效');
+  const offset=pos,min=byte();if(min<2||min>8)throw Error('GIF 压缩数据无效');skipBlocks();
+  frames.push({x,y,w,h,colors,offset,interlaced:!!(f&64),delay:0,dispose:0,transparent:-1,...control});control={};
+  if(frames.length*height>32767||frames.length*height*width>16777216)throw Error('GIF 的纵向序列超过当前画布容量');
+ }
+ if(!frames.length)throw Error('GIF 中没有图像帧');
+ return {width,height,global,background,frames};
+}
+async function openGifWorkspace(bytes,name){
+ const {width,height,global,background,frames}=parseGif(bytes);
+ const canvas=createCanvas(width,height),ctx=canvas.getContext('2d'),image=ctx.createImageData(width,height),pixels=image.data;
+ const b=newBoard(0),layersByFrame=[];
+ function clearRect(x,y,w,h,transparent){
+  const color=background*3;
+  const rgba=transparent||!global||color>=global.length?[0,0,0,0]:[global[color],global[color+1],global[color+2],255];
+  for(let row=y;row<y+h;row++)for(let col=x;col<x+w;col++)pixels.set(rgba,(row*width+col)*4);
+ }
+ clearRect(0,0,width,height,frames[0].transparent!==-1);
+ for(let i=0;i<frames.length;i++){
+  const f=frames[i],prior=f.dispose===3?pixels.slice():null,indices=new Uint8Array(f.w*f.h);
+  GifReaderLZWOutputIndexStream(bytes,f.offset,indices,indices.length);
+  let k=0;
+  const passes=f.interlaced?[[0,8],[4,8],[2,4],[1,2]]:[[0,1]];
+  for(const [start,step] of passes)for(let row=start;row<f.h;row+=step)for(let col=0;col<f.w;col++){
+   const idx=indices[k++];if(idx===f.transparent)continue;
+   const c=idx*3;if(c>=f.colors.length)throw Error('GIF 像素索引无效');
+   const p=((f.y+row)*width+f.x+col)*4;
+   pixels[p]=f.colors[c];pixels[p+1]=f.colors[c+1];pixels[p+2]=f.colors[c+2];pixels[p+3]=255;
+  }
+  ctx.putImageData(image,0,0);
+  const base=makeBase();base.asset=await decodeAsset(canvas.toDataURL('image/png'),name+' · 帧 '+i);
+  b.layers=[base];addImportLayers(b,base);layersByFrame.push(b.layers);
+  if(f.dispose===2)clearRect(f.x,f.y,f.w,f.h,f.transparent!==-1);
+  else if(prior)pixels.set(prior);
+  if(i%8===7)await new Promise(resolve=>setTimeout(resolve,0));
+ }
+ b.number=Math.max(...boards.map(item=>item.number))+1;
+ b.width=width;b.height=height*frames.length;b.layers=layersByFrame[0];layersByFrame[0]=null;
+ b.selected=b.layers.at(-1).id;b.sprite={active:0,frameHeight:height,frames:layersByFrame,delays:frames.map(f=>f.delay)};
+ b.originalTiming=true;b.fps=12;b.status='已导入 '+frames.length+' 帧 GIF';activateWorkspace(b);
+}
+
 start();
 </script></body></html>

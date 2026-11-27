@@ -103,7 +103,7 @@ body:has(#ptStudio[open]){overflow:hidden}
 </section>
 <aside class="right">
 <article class="panel layer-panel"><div class="panel-head"><div class="title"><i data-i="layers"></i><h2>图层</h2><span class="count" id="layerCount"></span></div><div class="add-actions"><button class="text-btn spectrum-add" id="addRainbow" title="选择渐变素材或编辑 ColorFlow 网格，应用为剪辑蒙版" aria-haspopup="dialog"><span class="spectrum-dot"></span>渐变图库</button><button class="icon bordered" id="add" title="新建透明图层" aria-label="新建透明图层"><i data-i="plus"></i></button></div></div><div id="layerList" class="layer-list"></div><div class="layer-tools"><button class="text-btn" id="duplicate"><i data-i="copy"></i>复制图层</button><div><button class="icon" id="up" aria-label="上移图层" title="上移图层"><i data-i="up"></i></button><button class="icon" id="down" aria-label="下移图层" title="下移图层"><i data-i="down"></i></button><button class="icon" id="remove" aria-label="删除图层" title="删除图层"><i data-i="trash"></i></button></div></div></article>
-<article class="panel properties"><div class="panel-head"><div class="title"><i data-i="sliders"></i><h2>图层属性</h2></div><button class="icon" id="reset" title="重置图层属性" aria-label="重置图层属性"><i data-i="reset"></i></button></div><div id="propBody" class="prop-body"><div class="sub-head"><strong>图层图像</strong><button id="layerImport" class="text-btn"><i data-i="upload"></i><span>导入图片</span></button></div><div id="sourceName" class="source-name"></div><div id="gradientEditor"><div class="sub-head"><label class="map-toggle"><input id="mapping" type="checkbox">渐变映射</label><button class="text-btn" id="reverse"><i data-i="reverse"></i>反转</button></div><div class="ramp" id="ramp"></div><div class="ramp-label"><span>阴影</span><span>高光</span></div></div><div id="spectrumEditor" hidden><strong>RGB 彩虹色谱</strong><div class="spectrum-strip"></div><label for="colorRange">色彩范围</label><select id="colorRange"><option value="hue">连续彩虹色相</option><option value="rgb">完整 RGB 色域 · 24 位</option></select><div class="settings-group"><label for="angle">渐变方向</label><select id="angle"></select></div></div><div class="settings-group"><label for="blend">混合模式</label><div class="select-wrap"><select id="blend"></select><i data-i="down"></i></div></div><div class="settings-group"><div class="sub-head"><label for="opacity">不透明度</label><output id="opacityOut"></output></div><input type="range" id="opacity" min="0" max="100"></div></div><div id="baseNote" hidden>添加图层或导入图片以开始编辑。</div></article>
+<article class="panel properties"><div class="panel-head"><div class="title"><i data-i="sliders"></i><h2>图层属性</h2></div><button class="icon" id="reset" title="重置图层属性" aria-label="重置图层属性"><i data-i="reset"></i></button></div><div id="propBody" class="prop-body"><div class="sub-head"><strong>图层图像</strong><button id="layerImport" class="text-btn"><i data-i="upload"></i><span>导入图片</span></button></div><div id="sourceName" class="source-name"></div><div id="gradientEditor"><div class="sub-head"><label class="map-toggle"><input id="mapping" type="checkbox">渐变映射</label><label class="map-toggle" title="对渐变映射结果做抖动，消除色带"><input id="dither" type="checkbox">抖动</label><button class="text-btn" id="reverse"><i data-i="reverse"></i>反转</button></div><div class="ramp" id="ramp"></div><div class="ramp-label"><span>阴影</span><span>高光</span></div><div class="settings-group"><div class="sub-head"><label for="ditherRange">抖动范围</label><output id="ditherOut"></output></div><input type="range" id="ditherRange" min="1" max="100" value="50" title="滚动滚轮可调抖动范围"></div></div><div id="spectrumEditor" hidden><strong>RGB 彩虹色谱</strong><div class="spectrum-strip"></div><label for="colorRange">色彩范围</label><select id="colorRange"><option value="hue">连续彩虹色相</option><option value="rgb">完整 RGB 色域 · 24 位</option></select><div class="settings-group"><label for="angle">渐变方向</label><select id="angle"></select></div></div><div class="settings-group"><label for="blend">混合模式</label><div class="select-wrap"><select id="blend"></select><i data-i="down"></i></div></div><div class="settings-group"><div class="sub-head"><label for="opacity">不透明度</label><output id="opacityOut"></output></div><input type="range" id="opacity" min="0" max="100"></div></div><div id="baseNote" hidden>添加图层或导入图片以开始编辑。</div></article>
 </aside></main><footer><span><b class="status-dot"></b><span id="status" role="status">工作台就绪</span></span><span class="foot-meta"><i data-i="monitor"></i>sRGB <b>·</b> 8 bit <b>·</b> 本地处理</span></footer>
 <dialog id="ptStudio" aria-labelledby="ptHeading">
  <header class="ptHeader"><div class="ptBrand"><b>Chroma</b><span></span><h2 id="ptHeading">图片转像素画</h2></div><button class="btn" id="ptBack">返回像素画布</button></header>
@@ -244,7 +244,7 @@ const demoURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gxYSUNDX1BST0
 const uid=()=>crypto.randomUUID?.()||Date.now().toString(36)+Math.random().toString(36).slice(2);
 const gradient=(colors,angle=90)=>'linear-gradient('+angle+'deg,'+colors.join(',')+')';
 function makeLayer(name,preset='暮光紫霞',mode='source-over',opacity=100){
- const original={preset,mode,opacity,mapped:true};
+ const original={preset,mode,opacity,mapped:true,dither:false,ditherRange:50};
  return {id:uid(),name,...original,colors:[...byName(preset).colors],original,visible:true,locked:false,isBase:false,asset:null};
 }
 function makeBase(){
@@ -368,6 +368,10 @@ function renderProperties(){
  $('sourceName').textContent=layer.asset?layer.asset.name+' · '+layer.asset.image.width+' × '+layer.asset.image.height:spectrum?'RGB 色谱填充':layer.kind==='pixels'?'透明像素图层':(layer.isBase?'尚未导入图片':'使用下方图层的合成结果');
  $('layerImport').lastElementChild.textContent=layer.asset?'更换图片':'导入图片';
  $('mapping').checked=layer.mapped;$('mapping').disabled=layer.locked;$('reverse').disabled=!layer.mapped||layer.locked;
+ $('dither').checked=!!layer.dither;$('dither').disabled=layer.locked;
+ $('ditherRange').value=String(layer.ditherRange==null?50:layer.ditherRange);
+ $('ditherRange').disabled=layer.locked||!layer.dither;
+ $('ditherOut').value=layer.dither?ditherLevels(layer)+' 级':'—';
  $('blend').disabled=$('opacity').disabled=layer.locked;$('blend').value=layer.mode;$('opacity').value=layer.opacity;
  setOpacityDisplay();const ramp=$('ramp');ramp.replaceChildren();ramp.style.background=gradient(layer.colors);ramp.classList.toggle('inactive',!layer.mapped);
  layer.colors.forEach((color,i)=>{
@@ -429,6 +433,14 @@ $('up').onclick=()=>move(1);$('down').onclick=()=>move(-1);
 $('reset').onclick=()=>{const l=active();if(!l||l.locked)return;Object.assign(l,l.original,{colors:[...byName(l.original.preset).colors]});revealPreset(l);refresh()};
 $('reverse').onclick=()=>{const l=active();l.colors.reverse();l.preset=null;refresh()};
 $('mapping').onchange=e=>{active().mapped=e.target.checked;refresh()};
+$('dither').onchange=e=>{active().dither=e.target.checked;refresh()};
+$('ditherRange').oninput=()=>{const l=active();if(!l)return;l.ditherRange=Number($('ditherRange').value);$('ditherOut').value=ditherLevels(l)+' 级';refresh()};
+$('ditherRange').addEventListener('wheel',e=>{
+ e.preventDefault();
+ const el=$('ditherRange'),next=Math.min(100,Math.max(1,Number(el.value)+(e.deltaY>0?-1:1)));
+ if(String(next)===el.value)return;
+ el.value=String(next);el.oninput();
+},{passive:false});
 $('blend').onchange=e=>{active().mode=e.target.value;refresh()};
 $('opacity').oninput=e=>{active().opacity=Number(e.target.value);setOpacityDisplay();renderLayers();schedule();saveLater(board)};
 $('prev').onclick=()=>{board.page--;renderPresets();saveLater(board)};$('next').onclick=()=>{board.page++;renderPresets();saveLater(board)};
@@ -446,8 +458,58 @@ function drawNative(ctx,image,w,h,dx=0,dy=0){
  ctx.imageSmoothingEnabled=false;
  ctx.drawImage(image,Math.floor((w-image.width)/2)+dx,Math.floor((h-image.height)/2)+dy);
 }
-function remap(pixels,colors,opaque=false){
+const BAYER_CACHE={};
+function bayerMatrix(n){
+ if(BAYER_CACHE[n])return BAYER_CACHE[n];
+ let m=[[0]];
+ while(m.length<n){
+  const s=m.length,next=Array.from({length:s*2},()=>new Array(s*2).fill(0));
+  for(let y=0;y<s;y++)for(let x=0;x<s;x++){
+   const v=m[y][x]*4;
+   next[y][x]=v;next[y][x+s]=v+2;next[y+s][x]=v+3;next[y+s][x+s]=v+1;
+  }
+  m=next;
+ }
+ return BAYER_CACHE[n]=m;
+}
+// 抖动范围 1..100 映射为 64..2 级色阶：范围越大，色阶越少，纹理越明显。
+function ditherLevels(layer){
+ const r=Math.max(1,Math.min(100,Number(layer&&layer.ditherRange!=null?layer.ditherRange:50)));
+ return Math.max(2,Math.round(64-(r-1)*62/99));
+}
+function ditherLuma(src,w,h,levels,mode){
+ const step=255/Math.max(1,levels-1),out=Float32Array.from(src);
+ if(mode==='fs'){
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+   const i=y*w+x,q=Math.round(out[i]/step)*step,err=out[i]-q;out[i]=q;
+   if(x+1<w)out[i+1]+=err*7/16;
+   if(y+1<h){
+    if(x>0)out[i+w-1]+=err*3/16;
+    out[i+w]+=err*5/16;
+    if(x+1<w)out[i+w+1]+=err/16;
+   }
+  }
+  return out;
+ }
+ const n=mode==='bayer2'?2:mode==='bayer8'?8:4,m=bayerMatrix(n),area=n*n;
+ for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+  const i=y*w+x,v=out[i]/step,base=Math.floor(v),t=(m[y%n][x%n]+0.5)/area;
+  out[i]=Math.min(255,Math.max(0,(base+(v-base>t?1:0))*step));
+ }
+ return out;
+}
+function remap(pixels,colors,opaque=false,w=0,h=0,dither='none',levels=16){
  const map=lookup(colors);
+ if(dither&&dither!=='none'&&w>0&&h>0&&levels>1&&w*h*4<=pixels.length){
+  const n=w*h,lum=new Float32Array(n);
+  for(let p=0,i=0;p<n;p++,i+=4)lum[p]=pixels[i]*.2126+pixels[i+1]*.7152+pixels[i+2]*.0722;
+  const q=ditherLuma(lum,w,h,levels,dither);
+  for(let p=0,i=0;p<n;p++,i+=4){
+   const idx=3*Math.min(255,Math.max(0,Math.round(q[p])));
+   pixels[i]=map[idx];pixels[i+1]=map[idx+1];pixels[i+2]=map[idx+2];if(opaque)pixels[i+3]=255;
+  }
+  return;
+ }
  for(let i=0;i<pixels.length;i+=4){
   const idx=3*Math.round(pixels[i]*.2126+pixels[i+1]*.7152+pixels[i+2]*.0722);
   pixels[i]=map[idx];pixels[i+1]=map[idx+1];pixels[i+2]=map[idx+2];if(opaque)pixels[i+3]=255;
@@ -560,7 +622,7 @@ function paintFlowLayer(ctx,layer,w,h){
   drawNative(mask.getContext('2d'),layer.flowAlpha.image,w,h,layerShift(layer,'offsetX'),layerShift(layer,'offsetY'));
   ctx.save();ctx.globalCompositeOperation='destination-in';ctx.drawImage(mask,0,0);ctx.restore();
  }
- if(layer.mapped){const data=ctx.getImageData(0,0,w,h);remap(data.data,layer.colors);ctx.putImageData(data,0,0)}
+ if(layer.mapped){const data=ctx.getImageData(0,0,w,h);remap(data.data,layer.colors,false,w,h,layer.dither?(layer.ditherMode||'bayer4'):'none',ditherLevels(layer));ctx.putImageData(data,0,0)}
 }
 function paintSpectrumLayer(ctx,layer,w,h){
  const fw=layer.fieldW||w,fh=layer.fieldH||h;
@@ -572,7 +634,7 @@ function paintSpectrumLayer(ctx,layer,w,h){
   const mask=createCanvas(w,h);raster(mask.getContext('2d'),layer,w,h);
   ctx.save();ctx.globalCompositeOperation='destination-in';ctx.drawImage(mask,0,0);ctx.restore();
  }
- if(layer.mapped){const data=ctx.getImageData(0,0,w,h);remap(data.data,layer.colors);ctx.putImageData(data,0,0)}
+ if(layer.mapped){const data=ctx.getImageData(0,0,w,h);remap(data.data,layer.colors,false,w,h,layer.dither?(layer.ditherMode||'bayer4'):'none',ditherLevels(layer));ctx.putImageData(data,0,0)}
 }
 function composeFrame(canvas,b,original=false){
  const w=canvas.width,h=canvas.height,ctx=canvas.getContext('2d',{willReadFrequently:true});
@@ -592,11 +654,11 @@ function composeFrame(canvas,b,original=false){
   else if(layer.kind==='flow')paintFlowLayer(paint,layer,w,h);
   else if(layer.asset||stroke?.layer===layer){
    raster(paint,layer,w,h);
-   if(layer.mapped){const data=paint.getImageData(0,0,w,h);remap(data.data,layer.colors);paint.putImageData(data,0,0)}
+   if(layer.mapped){const data=paint.getImageData(0,0,w,h);remap(data.data,layer.colors,false,w,h,layer.dither?(layer.ditherMode||'bayer4'):'none',ditherLevels(layer));paint.putImageData(data,0,0)}
   }else if(layer.mapped&&!layer.isBase&&layer.kind!=='pixels'){
    const backdrop=ctx.getImageData(0,0,w,h),pixels=backdrop.data;coverage=new Uint8Array(w*h);
    for(let k=3,p=0;k<pixels.length;k+=4,p++){coverage[p]=pixels[k];pixels[k]=255}
-   ctx.putImageData(backdrop,0,0);remap(pixels,layer.colors);
+   ctx.putImageData(backdrop,0,0);remap(pixels,layer.colors,false,w,h,layer.dither?(layer.ditherMode||'bayer4'):'none',ditherLevels(layer));
    const fw=layer.fieldW||w,fh=layer.fieldH||h;
    paint.putImageData(backdrop,0,0,Math.floor((w-fw)/2)+layerShift(layer,'offsetX'),Math.floor((h-fh)/2)+layerShift(layer,'offsetY'),fw,fh);
   }else continue;

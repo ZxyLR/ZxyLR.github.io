@@ -86,14 +86,17 @@ body:has(#ptStudio[open]){overflow:hidden}
 
 .fg-detail[hidden]{display:none}
 </style>
-</head>
+<style>
+.project-actions,.project-dialog-actions{display:flex;align-items:center;gap:12px}.project-actions{margin-left:auto;flex:none}.project-actions button{white-space:nowrap}.project-dialog-actions{justify-content:flex-end}#projectFileName{font-weight:600;overflow-wrap:anywhere}#projectNotice{line-height:1.65}
+@media(max-width:620px){.workspaces{flex-wrap:wrap}.workspaces .board-tabs{max-width:100%;width:100%}.project-actions{gap:10px}}
+</style></head>
 <body>
 <header class="topbar"><div class="brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MiA0MiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZTljM2ZjIi8+PHN0b3Agb2Zmc2V0PSIuNTMiIHN0b3AtY29sb3I9IiNhOTg3ZWYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2MTQ3YzMiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMiAxOCAxNiA2aDI0TDI2IDE4WiIgZmlsbD0iI2QwYjdmNCIvPjxwYXRoIGQ9Ik0yIDI3IDE2IDE1aDI0TDI2IDI3WiIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0yIDM2IDE2IDI0aDI0TDI2IDM2WiIgZmlsbD0iIzZmNTBjNyIvPjwvc3ZnPgo=" alt=""><b>Chroma</b><i></i><span>渐变映射工作台</span></div><div class="actions"><button type="button" class="btn" id="ptLaunch" aria-haspopup="dialog" aria-controls="ptStudio">图片转像素画</button><button type="button" id="textStudioButton" class="btn" aria-haspopup="dialog" aria-controls="textStudio"><span>渐变色文字工作台</span></button><button id="import" class="btn" title="按图片原始尺寸创建新工作台"><i data-i="upload"></i>导入底图</button><button id="export" class="btn primary"><i data-i="download"></i>导出图片</button><input id="file" type="file" accept="image/*" hidden></div></header>
-<nav class="workspaces" aria-label="工作台"><div id="boardTabs" class="board-tabs"></div><button id="addBoard" class="text-btn new-board"><i data-i="plus"></i>新建工作台</button></nav>
+<nav class="workspaces" aria-label="工作台"><div id="boardTabs" class="board-tabs"></div><button id="addBoard" class="text-btn new-board"><i data-i="plus"></i>新建工作台</button><div class="project-actions"><button type="button" id="saveProject" class="text-btn" title="将全部工作台保存为项目文件"><i data-i="download"></i>保存项目</button><button type="button" id="openProject" class="text-btn" title="从文件恢复全部工作台"><i data-i="upload"></i>导入项目</button><input id="projectFile" type="file" accept=".chroma,.json,application/json" hidden></div></nav>
 <main class="studio">
 <section class="left">
 <article class="panel preview" id="preview"><div class="panel-head"><div class="title"><i data-i="canvas"></i><h1>画布预览</h1><span class="live"><b></b>实时</span></div><div class="canvas-actions"><button class="text-btn" id="boardResize">修改画布</button><em></em><button id="compare" class="text-btn" aria-pressed="false"><i data-i="compare"></i><span>对比原图</span></button><em></em><button id="full" class="icon" title="全屏预览" aria-label="全屏预览"><i data-i="expand"></i></button></div></div>
-<div class="pixel-tools" role="toolbar" aria-label="像素编辑"><div id="toolSet" class="tool-set"></div><label class="brush-size">笔宽 <select id="brushWidth"><option value="1">1 px</option><option value="2">2 px</option><option value="3">3 px</option><option value="4">4 px</option><option value="8">8 px</option></select></label><button id="gridToggle" class="tool" aria-pressed="false">网格</button><button id="bgToggle" class="tool" title="切换画布底色">棋盘</button><button id="mirrorX" class="tool" aria-pressed="false" title="水平对称绘制">镜像X</button><button id="mirrorY" class="tool" aria-pressed="false" title="垂直对称绘制">镜像Y</button><span class="undo-group"><button id="undoEdit" class="tool" title="撤销 Ctrl/⌘ Z">↶ 撤销</button><button id="redoEdit" class="tool" title="重做 Ctrl/⌘ Shift Z">↷ 重做</button></span></div><div class="ink-row"><label title="当前颜色"><input type="color" id="ink" value="#302943" aria-label="当前颜色"></label><div id="swatches" aria-label="像素调色板"></div><button id="keepInk" class="tool" title="加入调色板" aria-label="加入调色板">＋</button><output id="pixelCoords">—</output></div><div class="canvas-stage" id="stage"><svg id="picture" tabindex="0" role="img" aria-label="像素矢量预览，放大后可拖动画布" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<div class="pixel-tools" role="toolbar" aria-label="像素编辑"><div id="toolSet" class="tool-set"></div><label class="brush-size" title="滚轮可调笔宽">笔宽 <select id="brushWidth"><option value="1">1 px</option><option value="2">2 px</option><option value="3">3 px</option><option value="4">4 px</option><option value="8">8 px</option></select></label><button id="gridToggle" class="tool" aria-pressed="false">网格</button><button id="bgToggle" class="tool" title="切换画布底色">棋盘</button><button id="mirrorX" class="tool" aria-pressed="false" title="水平对称绘制">镜像X</button><button id="mirrorY" class="tool" aria-pressed="false" title="垂直对称绘制">镜像Y</button><span class="undo-group"><button id="undoEdit" class="tool" title="撤销 Ctrl/⌘ Z">↶ 撤销</button><button id="redoEdit" class="tool" title="重做 Ctrl/⌘ Shift Z">↷ 重做</button></span></div><div class="ink-row"><label title="当前颜色"><input type="color" id="ink" value="#302943" aria-label="当前颜色"></label><div id="swatches" aria-label="像素调色板"></div><button id="keepInk" class="tool" title="加入调色板" aria-label="加入调色板">＋</button><output id="pixelCoords">—</output></div><div class="canvas-stage" id="stage"><svg id="picture" tabindex="0" role="img" aria-label="像素矢量预览，放大后可拖动画布" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
 <defs><pattern id="checker" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#ffffff"/><path d="M0 0h8v8H0zM8 8h8v8H8z" fill="#dedbe5"/></pattern></defs><rect id="paper" fill="url(#checker)"/><g id="pixelPaths"></g><path id="pixelGrid" pointer-events="none" fill="none" stroke="#716481" stroke-opacity=".42" stroke-width="1" vector-effect="non-scaling-stroke"/><rect id="brushCursor" pointer-events="none" fill="none" stroke="#895bc7" stroke-width="1.5" vector-effect="non-scaling-stroke" hidden/></svg><button id="emptyCanvas" class="empty-canvas" hidden><i data-i="upload"></i><strong>导入第一张图片</strong><span>选择图片或拖入画布</span></button><div class="drop-overlay">松开以导入当前图层</div></div>
 <div class="sprite-tools"><button id="splitSheet" class="btn">切分纵向图</button><button id="focusFrame" class="btn" hidden>聚焦当前帧</button><button id="makeSheet" class="btn">生成精灵序列</button><button id="animPreview" class="btn">预览模式</button><div class="frame-nav" id="frameNav" hidden><button type="button" id="prevFrame" class="frame-arrow" aria-label="上一帧" title="上一帧">‹</button><span id="frameLabel" class="frame-label" title="滚轮切换帧">帧 1 / 1</span><button type="button" id="nextFrame" class="frame-arrow" aria-label="下一帧" title="下一帧">›</button></div></div><div class="canvas-foot"><div class="file-info"><i data-i="picture"></i><span id="filename">Alpine Peaks.jpg</span><i class="sep"></i><small id="dimensions">1920 × 1080</small></div><div class="zoom"><select id="nativeZoom" aria-label="像素显示倍率" title="每个图像像素的屏幕显示大小"><option value="">像素倍率</option><option value="fit">适应</option><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option><option value="8">8×</option><option value="16">16×</option><option value="32">32×</option><option value="64">64×</option></select><button id="minus" class="icon" aria-label="缩小" title="缩小"><i data-i="minus"></i></button><button id="zoomValue" title="适应画布并居中">100%</button><button id="plus" class="icon" aria-label="放大" title="放大"><i data-i="plus"></i></button></div></div></article>
 <article class="panel presets"><div class="panel-head"><div class="title"><i data-i="palette"></i><h2>渐变映射库</h2><span class="count" id="presetCount"></span></div><div class="pager"><button class="icon" id="prev" aria-label="上一组预设"><i data-i="left"></i></button><button class="icon" id="next" aria-label="下一组预设"><i data-i="right"></i></button></div></div><div class="families" id="families" aria-label="选择色系"></div><div class="preset-row" id="presets"></div></article>
@@ -164,6 +167,7 @@ body:has(#ptStudio[open]){overflow:hidden}
 <dialog id="splitDialog" class="sprite-dialog"><form id="splitForm"><div class="dialog-head"><h2>切分纵向精灵表</h2><button type="button" class="icon" id="closeSplit">×</button></div><label>单帧高度（px） <input id="splitHeight" type="number" min="1" step="1" required></label><p>从上往下按当前可见内容切分，每帧生成一个图层。</p><button class="btn primary">切分为独立帧</button></form></dialog><dialog id="sheetDialog" class="sprite-dialog"><form id="sheetForm"><div class="dialog-head"><h2>生成纵向精灵序列</h2><button type="button" class="icon" id="closeSheet" aria-label="关闭">×</button></div><label>总帧数 <input id="frameCount" type="number" min="1" step="1" value="1" required></label><p id="sheetHint" role="status"></p><button class="btn primary" type="submit">生成序列</button></form></dialog>
 <dialog id="playerDialog" class="sprite-dialog"><div class="dialog-head"><h2>精灵动画预览</h2><button class="icon" id="closePlayer" aria-label="关闭">×</button></div><div class="movie-window"><canvas id="frameWindow" aria-label="当前动画帧"></canvas></div><div class="movie-row"><output id="frameReadout"></output><label>单帧高度（px）<input id="sliceH" type="number" min="1" step="1" required></label></div><input id="scrubber" type="range" min="0" step="1" aria-label="帧进度"><div id="ticks" aria-label="帧刻度"></div><div class="movie-row"><button id="playFrames" class="btn">播放</button><label id="timingLabel" hidden>播放时序 <select id="timingMode"><option value="original">GIF 原始帧时长</option><option value="fixed">固定 FPS</option></select></label><label>FPS <input id="fps" min="1" max="100" type="number" step="1" required value="12"></label><button id="gifSave" class="btn primary">导出 GIF</button></div><p id="gifStatus" role="status"></p></dialog>
 <dialog id="resizeDialog" aria-labelledby="resizeTitle"><form id="resizeForm"><div class="dialog-head"><h2 id="resizeTitle">修改画布尺寸</h2><button type="button" class="icon" id="resizeCancel" aria-label="取消">×</button></div><div class="size-pair"><label>宽度<span><input id="resizeW" type="number" min="1" step="1" required> px</span></label><label><b id="resizeHeightLabel">高度</b><span><input id="resizeH" type="number" min="1" step="1" required> px</span></label></div><p id="resizeNote"></p><button class="btn primary" type="submit">应用尺寸</button></form></dialog>
+<dialog id="projectDialog" aria-labelledby="projectTitle" aria-describedby="projectNotice"><div class="dialog-head"><h2 id="projectTitle">导入项目</h2></div><p id="projectFileName"></p><p id="projectNotice" role="status"></p><div class="project-dialog-actions"><button type="button" id="cancelProject" class="btn" autofocus>取消</button><button type="button" id="confirmProject" class="btn primary" disabled>打开项目</button></div></dialog>
 <dialog id="createDialog"><form id="createForm"><div class="dialog-head"><h2>新建工作台</h2><button type="button" id="cancelCreate" class="icon" aria-label="关闭"><i data-i="x"></i></button></div><div class="size-pair"><label for="newW">宽度<span><input id="newW" type="number" min="16" max="4096" step="16" value="32" required> px</span></label><label for="newH">高度<span><input id="newH" type="number" min="16" max="4096" step="16" value="32" required> px</span></label></div><p class="size-tip">每边 16–4096 px，以 16 px 为步长。</p><button type="submit" class="btn primary">创建工作台</button></form></dialog>
 <dialog id="exportDialog"><form id="exportForm"><div class="dialog-head"><h2>导出图片</h2><button class="icon" id="cancelExport" type="button" aria-label="关闭"><i data-i="x"></i></button></div><label for="format">文件格式</label><select id="format"><option value="png">PNG</option><option value="jpeg">JPEG</option><option value="webp">WebP</option></select><div class="size-pair"><label for="outW">宽度<span><input id="outW" type="number" min="16" max="4096" step="16" value="32" required> px</span></label><label for="outH">高度<span><input id="outH" type="number" min="16" max="4096" step="16" value="32" required> px</span></label></div><p class="size-tip">每边 16–4096 px，以 16 px 为步长。</p><p id="exportSize"></p><button type="submit" id="save" class="btn primary"><i data-i="download"></i>下载图片</button></form></dialog>
 <script>"use strict";
@@ -732,18 +736,19 @@ $('emptyCanvas').onclick=()=>pickImage(targetFor(true));
 $('layerImport').onclick=()=>pickImage(targetFor());
 async function importFile(file,target){
  if(!file)return;
- const {board:b,layer,createWorkspace}=target;
+ const {board:b,layer,createWorkspace}=target,epoch=projectEpoch;
  let gifImport=false;
  // A late decode belongs to the initiating layer, even after switching workspaces.
  const slots=layer?imports:baseSlot,key=layer||b||target,token=Symbol();slots.set(key,token);
  try{
   const url=await readFile(file),start=url.indexOf(',')+1,signature=url.slice(start,start+8);
+  if(epoch!==projectEpoch)return;
   gifImport=signature==='R0lGODdh'||signature==='R0lGODlh';
   if(gifImport){
    const bytes=Uint8Array.from(atob(url.slice(start)),c=>c.charCodeAt(0));
-   await openGifWorkspace(bytes,file.name);return;
+   await openGifWorkspace(bytes,file.name,()=>epoch===projectEpoch);return;
   }
-  const asset=await decodeAsset(url,file.name);
+  const asset=await decodeAsset(url,file.name);if(epoch!==projectEpoch)return;
   if(createWorkspace){
    openNewWorkspace({width:asset.image.naturalWidth||asset.image.width,height:asset.image.naturalHeight||asset.image.height},asset);
    return;
@@ -793,11 +798,11 @@ function openStore(){return new Promise((resolve,reject)=>{
  request.onupgradeneeded=()=>request.result.createObjectStore('boards',{keyPath:'id'});
  request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);
 })}
-function serialize(b){
+function serialize(b,assetURL){
  const assets=[],assetIds=new Map();
  function packAsset(asset){
   if(!asset)return null;
-  if(!assetIds.has(asset)){assetIds.set(asset,assets.length);assets.push({url:asset.url===demoURL?'@demo':asset.url===pixelDemoURL?'@pixels':asset.url,name:asset.name})}
+  if(!assetIds.has(asset)){assetIds.set(asset,assets.length);assets.push({url:assetURL?assetURL(asset):asset.url===demoURL?'@demo':asset.url===pixelDemoURL?'@pixels':asset.url,name:asset.name})}
   return assetIds.get(asset);
  }
  const storeLayer=l=>({...l,asset:packAsset(l.asset),...(l.flowAlpha?{flowAlpha:packAsset(l.flowAlpha)}:{})});
@@ -805,8 +810,8 @@ function serialize(b){
  const sprite=b.sprite?{...b.sprite,frames:b.sprite.frames.map(frame=>frame?frame.map(storeLayer):null)}:undefined;
  return {...b,assets,layers,sprite};
 }
-async function restore(data){
- const assets=await Promise.all(data.assets.map(a=>decodeAsset(a.url==='@demo'?demoURL:a.url==='@pixels'?pixelDemoURL:a.url,a.name)));
+async function restore(data,decode=decodeAsset){
+ const assets=await Promise.all(data.assets.map(a=>decode(a.url==='@demo'?demoURL:a.url==='@pixels'?pixelDemoURL:a.url,a.name)));
  const {assets:stored,...b}=data;
  b.width=b.width||32;b.height=b.height||32;
  const unpack=l=>({...l,asset:l.asset===null?null:assets[l.asset],...(l.flowAlpha!=null?{flowAlpha:assets[l.flowAlpha]}:{})});
@@ -827,7 +832,7 @@ async function start(){
  let storageAvailable=true;
  try{
   db=await openStore();const rows=await new Promise((resolve,reject)=>{const req=db.transaction('boards').objectStore('boards').getAll();req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});
-  boards=await Promise.all(rows.sort((a,b)=>a.number-b.number).map(restore));
+  boards=await Promise.all(rows.sort((a,b)=>a.number-b.number).map(row=>restore(row)));
  }catch{db=null;storageAvailable=false}
  if(!boards.length){
   board=newBoard(1,true);boards=[board];
@@ -837,7 +842,7 @@ async function start(){
   let selected;try{selected=sessionStorage.getItem('chroma.active')}catch{}
   board=boards.find(b=>b.id===selected)||boards[0];
  }
- rememberActive();refresh(false);document.body.inert=false;
+ projectGallery.include(boards);rememberActive();refresh(false);document.body.inert=false;
 }
 const gifCodec=(()=>{const exports={};
 /* gifenc 1.0.3
@@ -1722,6 +1727,18 @@ $('frameNav').addEventListener('wheel',e=>{
  const dir=e.deltaY>0?1:-1;
  selectPaintFrame(Math.max(0,Math.min(board.sprite.frames.length-1,board.sprite.active+dir)));
 },{passive:false});
+const BRUSH_STEPS=[1,2,3,4,8];
+function stepBrushWidth(dir){
+ const sel=$('brushWidth'),cur=Number(sel.value)||1;
+ let i=BRUSH_STEPS.indexOf(cur);if(i<0)i=0;
+ const next=BRUSH_STEPS[Math.max(0,Math.min(BRUSH_STEPS.length-1,i+dir))];
+ if(next===cur)return;
+ sel.value=String(next);
+ try{if(hoverPoint)cursorAt(hoverPoint)}catch(_){}
+}
+$('brushWidth').closest('.brush-size').addEventListener('wheel',e=>{
+ e.preventDefault();stepBrushWidth(e.deltaY>0?1:-1);
+},{passive:false});
 $('makeSheet').onclick=()=>{
  $('frameCount').value=board.sprite?.frames.length||1;sheetHint();$('sheetDialog').showModal();$('frameCount').select();
 };
@@ -2463,6 +2480,7 @@ surfaceSVG.onpointerleave=()=>{hoverPoint=null;cursorAt(null)};
 surfaceSVG.addEventListener('contextmenu',e=>e.preventDefault());
 surfaceSVG.addEventListener('wheel',e=>{
  if(!viewport||stroke||moving)return;e.preventDefault();
+ if(e.shiftKey){stepBrushWidth(e.deltaY>0?1:-1);return}
  const pt=sheetPoint(e),ratio=e.deltaY<0?2:0.5,old=viewport;
  zoomTo(board.zoom*ratio);if(!pt||!viewport)return;
  const box=surfaceSVG.getBoundingClientRect(),v=viewport,rx=e.clientX-box.left,ry=e.clientY-box.top;
@@ -2809,11 +2827,16 @@ function scheduleStrokePreview(){
  $('ptFullPng').onclick=()=>{$('ptSvgDialog').close();png()};
 })();
 
+const projectGallery={};
 (() => {
  const gallery=$('flowGallery'),editor=$('flowStudio'),mount=$('flowMount');
  const originals=JSON.parse($('flowSources').content.querySelector('#flowOriginals').textContent);
  const rainbow={id:'rainbow',name:'经典彩虹',thumb:null};
  const mine=new Map();
+ projectGallery.read=async()=>{await openLibrary();return mine};
+ projectGallery.include=workspaces=>{
+  for(const workspace of workspaces)for(const item of workspace.projectGradients||[])mine.set(item.id,item);
+ };
  let owner=null,selected=rainbow,library,loadPromise,frame=null,ticket=0,request=null,editItem=null;
  const msg=text=>{$('flowMessage').textContent=text};
  function openLibrary(){
@@ -2825,7 +2848,7 @@ function scheduleStrokePreview(){
    open.onsuccess=()=>{
     library=open.result;library.onversionchange=()=>{library.close();library=null};
     const get=library.transaction('gradients').objectStore('gradients').getAll();
-    get.onsuccess=()=>{for(const item of get.result)mine.set(item.id,item);resolve()};
+    get.onsuccess=()=>{for(const item of get.result)if(!mine.has(item.id))mine.set(item.id,item);resolve()};
     get.onerror=()=>resolve();
    };
   }).catch(()=>{});
@@ -2906,6 +2929,10 @@ function scheduleStrokePreview(){
    dest.kind='spectrum';dest.name='彩虹蒙版';delete dest.flowId;
   }else{
    if(dest.kind==='spectrum'&&dest.asset)dest.flowAlpha=dest.asset;
+   if(mine.has(item.id)){
+    b.projectGradients??=[];
+    if(!b.projectGradients.some(g=>g.id===item.id))b.projectGradients.push(item);
+   }
    dest.kind='flow';dest.asset=asset;dest.flowId=item.id;dest.name=item.name+' · 渐变蒙版';
   }
   dest.mapped=false;dest.original={...dest.original,mapped:false};dest.visible=true;
@@ -2953,6 +2980,165 @@ function scheduleStrokePreview(){
   }catch(err){editStatus(err.message);msg(err.message)}finally{if(from===frame){request=null;busy(false)}}
  });
 })();
+
+const projectKind='chroma-pixel-project';
+const photoData=/^data:image\/(?:png|jpeg|webp);base64,[a-z0-9+/]+={0,2}$/i;
+let projectEpoch=0;
+function projectImage(asset){
+ if(photoData.test(asset.url))return asset.url;
+ const image=asset.image,canvas=createCanvas(image.naturalWidth||image.width,image.naturalHeight||image.height);
+ canvas.getContext('2d').drawImage(image,0,0);
+ const png=canvas.toDataURL('image/png');
+ if(!photoData.test(png))throw Error('无法保存素材「'+asset.name+'」');
+ return png;
+}
+function usedGradients(b){
+ const ids=new Set();
+ const collect=layers=>{for(const layer of layers||[])if(layer.flowId)ids.add(layer.flowId)};
+ collect(b.layers);for(const layers of b.sprite?.frames||[])collect(layers);
+ return ids;
+}
+function makeProject(library){
+ const images=[],imageIds=new Map(),gradients=new Map();
+ const records=boards.map(b=>{
+  const record=serialize(b,projectImage);
+  delete record.projectGradients;
+  record.assets=record.assets.map(({url,name})=>{
+   if(!imageIds.has(url)){imageIds.set(url,images.length);images.push(url)}
+   return {name,image:imageIds.get(url)};
+  });
+  for(const id of usedGradients(b)){
+   const item=library.get(id);if(item)gradients.set(id,item);
+  }
+  return record;
+ });
+ return {format:projectKind,version:1,activeBoard:board.id,boards:records,images,gradients:[...gradients.values()]};
+}
+$('saveProject').onclick=async()=>{
+ const btn=$('saveProject');btn.disabled=true;
+ try{
+  const library=await projectGallery.read();
+  const project=makeProject(library),blob=new Blob([JSON.stringify(project)],{type:'application/json'});
+  const link=document.createElement('a');link.href=URL.createObjectURL(blob);
+  const now=new Date(),local=new Date(now.getTime()-now.getTimezoneOffset()*60000);
+  link.download='Chroma-'+local.toISOString().slice(0,19).replace('T','_').replace(/:/g,'-')+'.chroma';
+  document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),60000);
+  board.status='已导出项目 · '+project.boards.length+' 个工作台';updateView();
+ }catch(e){board.status='项目保存失败：'+e.message;updateView()}finally{btn.disabled=false}
+};
+
+function requireProject(ok,message){if(!ok)throw Error(message)}
+const positiveInt=n=>Number.isSafeInteger(n)&&n>0;
+const validIndex=(n,count)=>Number.isInteger(n)&&n>=0&&n<count;
+const validMode=m=>m==='clip'||Object.hasOwn(modes,m);
+const hexColor=c=>typeof c==='string'&&/^#[0-9a-f]{6}$/i.test(c);
+function validateLayers(layers,count){
+ requireProject(Array.isArray(layers),'缺少图层列表。');
+ const ids=new Set();
+ for(const l of layers){
+  requireProject(l&&typeof l.id==='string'&&!ids.has(l.id)&&typeof l.name==='string','图层信息有误。');ids.add(l.id);
+  requireProject(validMode(l.mode)&&Number.isFinite(l.opacity)&&l.opacity>=0&&l.opacity<=100,'图层混合设置有误。');
+  requireProject(l.original&&byName(l.original.preset)&&validMode(l.original.mode)&&Array.isArray(l.colors)&&l.colors.length>=2&&l.colors.every(hexColor),'图层渐变设置有误。');
+  requireProject(Object.keys(l.original).every(key=>['preset','mode','opacity','mapped','angle','range'].includes(key))&&Number.isFinite(l.original.opacity)&&l.original.opacity>=0&&l.original.opacity<=100,'图层初始设置有误。');
+  if(l.original.angle!=null)requireProject(Number.isInteger(l.original.angle)&&l.original.angle%45===0&&l.original.angle>=0&&l.original.angle<=315,'图层初始方向有误。');
+  requireProject((l.asset===null||validIndex(l.asset,count))&&(l.flowAlpha==null||validIndex(l.flowAlpha,count)),'找不到图层引用的图片。');
+  if(l.kind==='spectrum')requireProject(Number.isInteger(l.angle)&&l.angle%45===0&&l.angle>=0&&l.angle<=315,'彩虹渐变方向有误。');
+  for(const value of [l.fieldW,l.fieldH])if(value!=null)requireProject(positiveInt(value),'图层范围有误。');
+  for(const value of [l.offsetX,l.offsetY])if(value!=null)requireProject(Number.isSafeInteger(value),'图层位置有误。');
+ }
+}
+function validateBoard(b,images){
+ requireProject(b&&typeof b.id==='string'&&positiveInt(b.number)&&positiveInt(b.width)&&positiveInt(b.height),'工作台信息有误。');
+ requireProject(Number.isSafeInteger(b.serial)&&b.serial>=0&&Number.isSafeInteger(b.page)&&b.page>=0&&(b.family==='全部'||Object.hasOwn(families,b.family)),'工作台设置有误。');
+ for(const pos of [b.panX,b.panY])if(pos!=null)requireProject(Number.isFinite(pos),'工作台位置有误。');
+ requireProject(Number.isFinite(b.zoom)&&b.zoom>0&&Array.isArray(b.assets),'工作台视图或素材表有误。');
+ requireProject(!b.paintPalette||(Array.isArray(b.paintPalette)&&b.paintPalette.every(hexColor)),'画笔颜色有误。');
+ for(const a of b.assets)requireProject(a&&typeof a.name==='string'&&validIndex(a.image,images.length),'找不到工作台引用的素材。');
+ validateLayers(b.layers,b.assets.length);
+ const s=b.sprite;
+ if(s){
+  requireProject(Array.isArray(s.frames)&&validIndex(s.active,s.frames.length)&&positiveInt(s.frameHeight)&&s.frameHeight*s.frames.length===b.height,'精灵序列尺寸或当前帧有误。');
+  s.frames.forEach((frame,i)=>{if(i===s.active&&frame===null)return;validateLayers(frame,b.assets.length)});
+  if(s.delays)requireProject(Array.isArray(s.delays)&&s.delays.length===s.frames.length&&s.delays.every(d=>Number.isFinite(d)&&d>=0),'精灵帧时长有误。');
+ }
+}
+async function readProject(file){
+ let p;
+ try{p=JSON.parse(await file.text())}catch{throw Error('文件无法读取或内容不完整。')}
+ requireProject(p?.format===projectKind,'请选择由渐变映射工作台保存的 .chroma 项目文件。');
+ requireProject(p.version===1,'当前版本无法读取此项目格式。');
+ requireProject(Array.isArray(p.images)&&p.images.every(url=>typeof url==='string'&&photoData.test(url)),'项目内嵌图片有误。');
+ requireProject(Array.isArray(p.boards)&&p.boards.length&&Array.isArray(p.gradients),'项目缺少工作台或渐变数据。');
+ const ids=new Set(),numbers=new Set(),gradients=new Map();
+ for(const item of p.gradients){
+  requireProject(item&&typeof item.id==='string'&&item.id.startsWith('user-')&&!gradients.has(item.id)&&typeof item.name==='string'&&photoData.test(item.png)&&photoData.test(item.thumb)&&item.scene?.grid,'自定义渐变素材有误。');
+  gradients.set(item.id,item);
+ }
+ for(const b of p.boards){
+  validateBoard(b,p.images);
+  requireProject(!ids.has(b.id)&&!numbers.has(b.number),'项目包含重复的工作台。');
+  ids.add(b.id);numbers.add(b.number);
+ }
+ requireProject(ids.has(p.activeBoard),'找不到上次编辑的工作台。');
+ const cache=new Map();
+ async function decode(url,name){
+  if(!cache.has(url))cache.set(url,decodeAsset(url,name));
+  try{return {...await cache.get(url),name}}catch{throw Error('无法解码图片「'+name+'」，文件可能已损坏。')}
+ }
+ const restored=[];
+ for(const data of p.boards){
+  const assets=data.assets.map(a=>({url:p.images[a.image],name:a.name}));
+  const b=await restore({...data,assets},decode);
+  b.projectGradients=[...usedGradients(b)].filter(id=>gradients.has(id)).map(id=>gradients.get(id));
+  restored.push(b);
+ }
+ for(const item of gradients.values()){await decode(item.png,item.name);await decode(item.thumb,item.name)}
+ return {workspaces:restored,active:restored.find(b=>b.id===p.activeBoard)};
+}
+function replaceSavedProject(next){
+ if(!db)return Promise.resolve();
+ const records=next.map(b=>serialize(b));
+ return new Promise((resolve,reject)=>{
+  const tx=db.transaction('boards','readwrite'),store=tx.objectStore('boards');
+  tx.oncomplete=resolve;tx.onabort=()=>reject(tx.error||Error('本地存储写入失败'));
+  try{store.clear();for(const b of records)store.put(b)}catch(e){tx.abort();reject(e)}
+ });
+}
+const projectDialog=$('projectDialog');
+let stagedProject=null,projectRead=0,openingProject=false;
+$('openProject').onclick=()=>$('projectFile').click();
+$('projectFile').onchange=async e=>{
+ const file=e.target.files[0];e.target.value='';if(!file)return;
+ const token=++projectRead;stagedProject=null;
+ $('confirmProject').disabled=true;$('projectFileName').textContent=file.name;
+ $('projectNotice').textContent='正在读取项目…';projectDialog.showModal();
+ try{
+  const next=await readProject(file);if(token!==projectRead)return;
+  stagedProject=next;
+  $('projectNotice').textContent='项目包含 '+next.workspaces.length+' 个工作台。打开后将替换当前 '+boards.length+' 个工作台。如需保留当前内容，请先取消并保存项目。';
+  $('confirmProject').disabled=false;
+ }catch(e){if(token===projectRead)$('projectNotice').textContent='导入失败：'+e.message}
+};
+$('cancelProject').onclick=()=>projectDialog.close();
+projectDialog.addEventListener('cancel',e=>{if(openingProject)e.preventDefault()});
+projectDialog.addEventListener('close',()=>{projectRead++;stagedProject=null});
+$('confirmProject').onclick=async()=>{
+ if(!stagedProject||openingProject)return;
+ const next=stagedProject;openingProject=true;
+ $('confirmProject').disabled=$('cancelProject').disabled=true;
+ $('projectNotice').textContent='正在恢复工作台…';
+ try{
+  // Flush existing debounced edits before queuing the atomic replacement transaction.
+  projectEpoch++;
+  for(const old of [...timers.keys()])saveNow(old);
+  await replaceSavedProject(next.workspaces);
+  boards=next.workspaces;board=next.active;
+  projectGallery.include(boards);rememberActive();hoverPoint=null;
+  board.status='已导入项目 · '+boards.length+' 个工作台'+(db?'':' · 仅本次会话');
+  refresh(false);projectDialog.close();
+ }catch(e){$('projectNotice').textContent='项目未打开：'+e.message;$('confirmProject').disabled=false}
+ finally{openingProject=false;$('cancelProject').disabled=false}
+};
 
 start();
 </script>
